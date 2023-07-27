@@ -7,6 +7,7 @@
   top: 0;
   padding-top: 16px;
   background: $dark-900;
+  z-index: 9999;
 }
 
 .header__container {
@@ -180,23 +181,9 @@
   height: 34px !important;
   max-width: 140px;
 
-  img {
-    margin-left: 4px;
-  }
-
   @media only screen and (min-width: 1160px) {
     max-width: 166px;
     margin-left: 12px;
-
-    img {
-      transition: all .3s ease;
-    }
-
-    &:hover {
-      img {
-        transform: translateX(5px);
-      }
-    }
   }
 }
 

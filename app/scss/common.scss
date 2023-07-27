@@ -1,6 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
 @import './vars';
 @import './header';
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,700;1,400;1,500&display=swap');
+@import './tag';
 
 * {
   margin: 0;
@@ -16,7 +17,18 @@ body {
 }
 
 .container {
+  width: 100%;
   padding: 0 20px;
+
+  @media only screen and (min-width: 760px) {
+    padding: 0 30px;
+  }
+
+  @media only screen and (min-width: 1160px) {
+    padding: 0;
+    margin: 0 auto;
+    max-width: 1160px;
+  }
 }
 
 .button {
@@ -42,4 +54,43 @@ body {
       background: lighten($blue, 7%);
     }
   }
+
+  &.dark {
+    background: $dark-700;
+    color: $gray;
+
+    img {
+      margin-left: 4px;
+    }
+
+    &:hover {
+      background: lighten($dark-700, 7%);
+    }
+  }
+
+  &.consultation {
+
+    img {
+      margin-left: 4px;
+      transition: all .3s ease;
+    }
+
+    &:hover {
+      img {
+        transform: translateX(5px);
+      }
+    }
+  }
+}
+
+.card {
+  background: $dark-800;
+  padding: 24px;
+  border-radius: 16px;
+}
+
+.text {
+  color: $dark-500;
+  font-weight: 500;
+  line-height: 165%;
 }
