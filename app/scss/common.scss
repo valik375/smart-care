@@ -95,3 +95,41 @@ body {
   font-weight: 500;
   line-height: 165%;
 }
+
+.section-title-wrapper {
+  margin-bottom: 12px;
+
+  .section-subtitle {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: 0.12px;
+    text-transform: uppercase;
+    color: $blue;
+    margin-bottom: 4px;
+
+    @media only screen and (min-width: 1160px) {
+      font-size: 15px;
+      line-height: 150%;
+      letter-spacing: 0.15px;
+    }
+  }
+
+  .section-title {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 33px;
+    letter-spacing: 0.22px;
+    color: $white;
+
+    span {
+      color: $blue;
+    }
+
+    @media only screen and (min-width: 1160px) {
+      font-size: 28px;
+      line-height: 150%;
+      letter-spacing: 0.28px;
+    }
+  }
+}
