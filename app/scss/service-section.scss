@@ -1,0 +1,37 @@
+@import './vars';
+
+.service {
+  padding-top: 48px;
+
+  @media only screen and (min-width: 760px) {
+    padding-top: 90px;
+  }
+
+  @media only screen and (min-width: 1160px) {
+    padding-top: 160px;
+  }
+}
+
+.service__info {
+  margin-bottom: 32px;
+  text-align: center;
+
+  @media only screen and (min-width: 760px) {
+    width: 100%;
+    max-width: 616px;
+    margin: 0 auto 64px;
+    padding: 0;
+  }
+}
+
+.service__title-wrapper, .service__text {
+  position: relative;
+  z-index: 2;
+}
+
+.service__title {
+
+  @media only screen and (min-width: 760px) {
+    font-size: 28px !important;
+  }
+}
