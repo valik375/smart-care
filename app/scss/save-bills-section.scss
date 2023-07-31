@@ -1,0 +1,24 @@
+@import './vars';
+
+.save-bills {
+  padding-top: 48px;
+
+  @media only screen and (min-width: 760px) {
+    padding-top: 90px;
+  }
+
+  @media only screen and (min-width: 1160px) {
+    padding-top: 160px;
+  }
+}
+
+.save-bills__info {
+  margin-bottom: 32px;
+}
+
+.save-bills__left {
+
+  @media only screen and (min-width: 1160px) {
+    height: 590px;
+  }
+}
