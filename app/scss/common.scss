@@ -220,3 +220,144 @@ body {
     justify-content: space-between;
   }
 }
+
+.dropdown-list {
+
+  .dropdown-item {
+    border-radius: 14px;
+    background: $dark-800;
+    margin-bottom: 12px;
+
+    &.active {
+
+      .dropdown-item__toggle span:nth-child(1) {
+        transform: rotate(0deg);
+        left: 3px;
+        top: 45%;
+      }
+
+      .dropdown-item__body {
+        padding: 0 16px 16px 16px;
+        max-height: 400px;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .dropdown-item__head {
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .dropdown-item__value {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $dark-700;
+    border-radius: 7px;
+    font-size: 14px;
+    color: $white;
+    font-weight: 700;
+    line-height: 155%;
+  }
+
+  .dropdown-item__title {
+    width: calc(100% - 88px);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 155%;
+    color: $white;
+  }
+
+  .dropdown-item__toggle {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span {
+      width: 14px;
+      height: 2px;
+      background: $white;
+      border-radius: 100px;
+      transition: all .3s ease;
+
+      &:nth-child(1) {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) rotate(90deg);
+      }
+    }
+  }
+
+  .dropdown-item__body {
+    font-size: 14px;
+    padding: 0 16px;
+    max-height: 0;
+    overflow: hidden;
+    transition: all .3s ease;
+  }
+}
+
+.two-column-section {
+
+  .column-left {
+    display: none;
+
+    @media only screen and (min-width: 1160px) {
+      display: block;
+      width: 511px;
+    }
+  }
+
+  .column-right {
+
+    @media only screen and (min-width: 1160px) {
+      width: calc(100% - 631px);
+
+      .column-image {
+        display: none;
+      }
+    }
+  }
+
+  .column-image {
+    width: 100%;
+    height: 328px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('../assets/two-column-section-bg.png');
+    background-size: cover;
+    overflow: hidden;
+    border-radius: 20px;
+    margin-bottom: 32px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    @media only screen and (min-width: 1160px) {
+      height: 100%;
+      margin-bottom: 0;
+    }
+  }
+
+  @media only screen and (min-width: 1160px) {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+  }
+}

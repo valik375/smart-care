@@ -90,3 +90,5 @@ tabButtons.forEach((button, index) => {
     })
   })
 })
+
+dropdownSetup('.wireless-system')
