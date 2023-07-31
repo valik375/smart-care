@@ -52,8 +52,8 @@ const cleanDist = () => {
 
 const appBuild = () => {
   return src([
-    'app/css/common.min.css',
-    'app/js/app.min.js',
+    'app/css/**/*.css',
+    'app/js/**/*.js',
     'app/assets/*.*',
     '!app/assets/src',
     'app/**/*.html',
