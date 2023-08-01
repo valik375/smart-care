@@ -17,3 +17,11 @@ const dropdownSetup = (sectionName) => {
     })
   })
 }
+
+const simpleDropdownButton = document.querySelectorAll('.simple-dropdown-button')
+
+simpleDropdownButton.forEach(button => {
+  button.addEventListener('click', () => {
+    button.parentNode.classList.toggle('active')
+  })
+})

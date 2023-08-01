@@ -1,0 +1,42 @@
+@import './vars';
+
+.simple-dropdown {
+  position: relative;
+
+  .simple-dropdown-body {
+    position: absolute;
+    width: 288px;
+    border-radius: 12px;
+    border: 1px solid $dark-600;
+    background: $dark-800;
+    box-shadow: 0 8px 30px 0 rgba(4, 5, 6, 0.06);
+    padding: 12px;
+    left: 0;
+    bottom: -166px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .3s ease;
+  }
+
+  &.active {
+
+    .simple-dropdown-body {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .simple-dropdown-button {
+      background: $dark-600;
+      color: $white;
+
+      svg {
+        transform: rotate(180deg);
+
+        path {
+          fill: $white;
+        }
+      }
+    }
+  }
+
+}
