@@ -1,0 +1,131 @@
+@import './vars';
+
+.have-questions {
+  padding-top: 48px;
+
+  @media only screen and (min-width: 760px) {
+    padding-top: 90px;
+  }
+
+  @media only screen and (min-width: 1160px) {
+    padding-top: 160px;
+  }
+}
+
+.have-questions__wrapper {
+
+  @media only screen and (min-width: 1160px) {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+}
+
+.have-questions__card {
+  margin-bottom: 32px;
+  padding-bottom: 111px;
+  position: relative;
+
+  @media only screen and (min-width: 1160px) {
+    width: 480px;
+    padding-bottom: 162px;
+  }
+}
+
+
+.have-questions__title {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 150%;
+  letter-spacing: 0.22px;
+  color: $white;
+  margin-bottom: 4px;
+}
+
+.have-questions__text {
+  font-size: 15px;
+  margin-bottom: 24px;
+}
+
+.have-questions__button {
+  max-width: 260px;
+}
+
+.have-questions__card-image {
+  position: absolute;
+  height: 23px;
+
+  &:nth-child(1) {
+    left: -11px;
+    bottom: 49px;
+    transform: rotate(47deg);
+    z-index: 2;
+  }
+
+  &:nth-child(2) {
+    left: 61px;
+    bottom: 47px;
+    transform: rotate(-17deg);
+  }
+
+  &:nth-child(3) {
+    left: 150px;
+    bottom: 2px;
+    transform: rotate(0);
+  }
+
+  &:nth-child(4) {
+    left: 255px;
+    bottom: 110px;
+    transform: rotate(-76deg);
+  }
+
+  &:nth-child(5) {
+    left: 102px;
+    bottom: 33px;
+    transform: rotate(-22deg);
+  }
+
+  &:nth-child(6) {
+    left: 222px;
+    bottom: 58px;
+    transform: rotate(48deg);
+  }
+
+  @media only screen and (min-width: 1160px) {
+    height: 34px;
+
+    &:nth-child(2) {
+      left: 102px;
+      bottom: 60px;
+    }
+
+    &:nth-child(3) {
+      left: 236px;
+    }
+
+    &:nth-child(4) {
+      right: -41px;
+      left: auto;
+      bottom: 150px;
+    }
+
+    &:nth-child(5) {
+      left: 154px;
+      bottom: 38px;
+    }
+
+    &:nth-child(6) {
+      right: 10px;
+      left: auto;
+      bottom: 57px;
+    }
+  }
+}
+
+.have-questions__dropdown-list {
+
+  @media only screen and (min-width: 1160px) {
+    width: calc(100% - 530px);
+  }
+}
