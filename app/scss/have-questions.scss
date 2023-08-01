@@ -1,14 +1,14 @@
 @import './vars';
 
 .have-questions {
-  padding-top: 48px;
+  padding: 48px 0;
 
   @media only screen and (min-width: 760px) {
-    padding-top: 90px;
+    padding: 90px 0;
   }
 
   @media only screen and (min-width: 1160px) {
-    padding-top: 160px;
+    padding: 160px 0;
   }
 }
 
