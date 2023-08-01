@@ -3,6 +3,7 @@
 @import './header';
 @import './footer';
 @import './tag';
+@import './dropdown';
 
 * {
   margin: 0;
@@ -80,6 +81,29 @@ body {
     &:hover {
       img {
         transform: translateX(5px);
+      }
+    }
+  }
+
+  &.gray {
+    border-radius: 8px;
+    background: $dark-700;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 160%;
+    color: $gray;
+    padding: 0;
+
+    svg path {
+      transition: all .3s ease;
+    }
+
+    &:hover {
+      background: $dark-600;
+      color: $white;
+
+      svg path {
+        fill: $white;
       }
     }
   }
