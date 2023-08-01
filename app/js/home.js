@@ -93,3 +93,4 @@ tabButtons.forEach((button, index) => {
 
 dropdownSetup('.wireless-system')
 dropdownSetup('.save-bills')
+dropdownSetup('.have-questions')
