@@ -96,4 +96,4 @@ dropdownSetup('.save-bills')
 dropdownSetup('.have-questions')
 
 openModalHandler('.header__showroom', '.showroom-modal__backdrop')
-// openModalHandler('.button.consultation', '.showroom-modal__backdrop')
+openModalHandler('.button.consultation', '.consultation-modal__backdrop')

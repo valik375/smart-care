@@ -164,3 +164,37 @@
     margin-right: 4px;
   }
 }
+
+.form-modal__contact-title {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 130%;
+  margin-bottom: 16px;
+  color: $dark-500;
+}
+
+.form-modal__contacts {
+  display: flex;
+  align-items: center;
+}
+
+.form-modal__contact-item {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 16px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &.phone {
+    padding: 5px;
+    background: $dark-600;
+    border-radius: 6px;
+  }
+}
