@@ -1,0 +1,50 @@
+<div class="showroom-modal__backdrop modal__backdrop">
+
+  <div class="showroom-modal modal">
+    <div class="showroom-modal__container form-modal">
+      <div class="modal__close">
+        <img src="../assets/white-cross.svg" alt="Cross">
+      </div>
+      <div class="form-modal__left">
+        <img class="form-modal__icon" src="../assets/form-mail-icon.svg" alt="Mail Icon">
+        <div class="form-modal__title">Запис у шоурум в Києві</div>
+        <div class="form-modal__text">У нашому шоурумі ви побачите системи оснащення розумного будинку та як вони
+          працюють. Ми допоможемо підібрати необхідне оснащення згідно ваших потреб та бюджету.</div>
+      </div>
+      <div class="form-modal__right">
+        <form class="form-modal__form">
+          <div class="form-modal__form-title">Залиште свої контакти і бажану дату з часом, ми передзвонимо
+            вам для їх узгодження</div>
+          <div class="input-group">
+            <label for="name" class="label">Імʼя*</label>
+            <input class="input" id="name" type="text" placeholder="Введіть ваше імʼя" required>
+          </div>
+          <div class="input-group">
+            <label for="date" class="label">Бажана дата та час*</label>
+            <input class="input" id="date" type="date" required>
+          </div>
+          <div class="input-group">
+            <label for="phone" class="label">Телефон*</label>
+            <input
+              class="input"
+              id="phone"
+              value="+380"
+              placeholder="+380XXXXXXXXX"
+              type="tel"
+              pattern="^\+380[0-9]{9}$"
+              required
+            >
+          </div>
+          <button class="form-modal__button button blue consultation" type="submit">
+            <span>Передзвоніть мені</span>
+          </button>
+        </form>
+        <div class="form-modal__location">
+          <img src="../assets/gray-location.svg" alt="Location Icon">
+          м. Київ, вул. Хрещатик 32/4
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
