@@ -4,6 +4,7 @@
 @import './footer';
 @import './tag';
 @import './dropdown';
+@import './modal';
 
 * {
   margin: 0;
@@ -384,5 +385,48 @@ body {
     display: flex;
     align-items: stretch;
     justify-content: space-between;
+  }
+}
+
+.input-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  .label {
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 130%;
+    color: $gray-100;
+    margin-bottom: 2px;
+  }
+
+  .input {
+    height: 41px;
+    border-radius: 8px;
+    border: 1px solid $dark-600;
+    padding: 0 12px;
+    background: transparent;
+    color: $gray-100;
+    outline: none;
+
+    &::placeholder {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 165%;
+      color: $dark-500;
+    }
+
+    &[type="date"]::-webkit-calendar-picker-indicator {
+      color: rgba(0, 0, 0, 0);
+      opacity: 1;
+      display: block;
+      background: url('../assets/white-calendar.svg') no-repeat center;
+      background-size: contain;
+      width: 20px;
+      height: 20px;
+      border-width: thin;
+    }
   }
 }
