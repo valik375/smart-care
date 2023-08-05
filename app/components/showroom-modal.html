@@ -12,22 +12,23 @@
           працюють. Ми допоможемо підібрати необхідне оснащення згідно ваших потреб та бюджету.</div>
       </div>
       <div class="form-modal__right">
-        <form class="form-modal__form">
+        <form class="form-modal__form" action="https://formspree.io/f/xdoravdr" method="POST">
           <div class="form-modal__form-title">Залиште свої контакти і бажану дату з часом, ми передзвонимо
             вам для їх узгодження</div>
           <div class="input-group">
             <label for="name" class="label">Імʼя*</label>
-            <input class="input" id="name" type="text" placeholder="Введіть ваше імʼя" required>
+            <input class="input" id="name" name="name" type="text" placeholder="Введіть ваше імʼя" required>
           </div>
           <div class="input-group">
             <label for="date" class="label">Бажана дата та час*</label>
-            <input class="input" id="date" type="date" required>
+            <input class="input" id="date" name="date" type="date" required>
           </div>
           <div class="input-group">
             <label for="phone" class="label">Телефон*</label>
             <input
               class="input"
               id="phone"
+              name="phone"
               value="+380"
               placeholder="+380XXXXXXXXX"
               type="tel"
@@ -35,7 +36,7 @@
               required
             >
           </div>
-          <button class="form-modal__button button blue consultation" type="submit">
+          <button class="form-modal__button button blue" type="submit">
             <span>Передзвоніть мені</span>
           </button>
         </form>
