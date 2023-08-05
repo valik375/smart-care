@@ -76,11 +76,13 @@ tabButtons.forEach((button, index) => {
     if (index === 0) {
       tabsWrapper.classList.add('active-left')
       tabsWrapper.classList.remove('active-right')
-      controlImage.src = '../assets/convenient-control-phone.png'
+      controlImage.classList.remove('gif')
+      controlImage.children[0].src = '../assets/convenient-control-phone.png'
     } else {
       tabsWrapper.classList.remove('active-left')
       tabsWrapper.classList.add('active-right')
-      controlImage.src = '../assets/convenient-control-phone.png'
+      controlImage.classList.add('gif')
+      controlImage.children[0].src = '../assets/voice-controller.gif'
     }
     opportunityItems.forEach((opportunity, opportunityIndex) => {
       const title = opportunity.children[0]
@@ -91,9 +93,156 @@ tabButtons.forEach((button, index) => {
   })
 })
 
+const mobileVideoWrapper = document.querySelector('.animation__video-mobile')
+
+document.querySelector('.animation__fullscreen-button').addEventListener('click', () => {
+  mobileVideoWrapper.classList.add('visible')
+  mobileVideoWrapper.children[0].play()
+})
+
+document.querySelector('.animation__close-video').addEventListener('click', () => {
+  mobileVideoWrapper.classList.remove('visible')
+  mobileVideoWrapper.children[0].pause()
+})
+
+const popularScenarioItems = [
+  {
+    title: 'Антипотоп система',
+    text: 'Трігер: переповнена ванна, протікання труб, пральної машини тощо.',
+    tags: [
+      {
+        image: '../assets/blue-drop.svg',
+        text: 'Перекриття води'
+      },
+      {
+        image: '../assets/blue-bolt.svg',
+        text: 'Знеструмлення будинку (опційно)'
+      },
+      {
+        image: '../assets/blue-iphone.svg',
+        text: 'Повідомлення на ваш телефон'
+      },
+    ]
+  },
+  {
+    title: 'Відеоспостереження',
+    text: 'Трігер: хтось підійшов до вашої оселі та подзвонив у дзвінок.',
+    tags: [
+      {
+        image: '../assets/blue-iphone.svg',
+        text: 'Ви бачите людину через камеру у мобільному додатку'
+      },
+      {
+        image: '../assets/blue-lock.svg',
+        text: 'Відкриваєте ворота'
+      }
+    ]
+  },
+  {
+    title: 'Контроль освітлення',
+    text: 'Трігер: ви сіли читати книжку та хочете збільшити яскравість освітлення.',
+    tags: [
+      {
+        image: '../assets/blue-microphone.svg',
+        text: 'Команда “Збільши яскравість”'
+      },
+      {
+        image: '../assets/blue-light.svg',
+        text: 'Збільшення яскравості освітлення'
+      }
+    ]
+  },
+  {
+    title: 'Керування вентиляцією',
+    text: 'Трігер: ви хочете підтримувати свіжість повітря в оселі, проте не відкривати вікна.',
+    tags: [
+      {
+        image: '../assets/blue-iphone.svg',
+        text: 'Ви обираєте потрібний рівень СО2 у повітрі через додаток'
+      },
+      {
+        image: '../assets/blue-ventilation.svg',
+        text: 'Система розумного будинку підтримує задане значення СО2 у повітрі'
+      }
+    ]
+  },
+  {
+    title: 'Розумні жалюзі та штори',
+    text: 'Трігер: ви хочете щоб штори у вашій спальні відкривалися щоразу вранці.',
+    tags: [
+      {
+        image: '../assets/blue-iphone.svg',
+        text: 'Обираєте розклад відкриття та закриття штор у додатку'
+      },
+      {
+        image: '../assets/blue-blinds.svg',
+        text: 'Штори працюють згідно обраного вами графіку'
+      }
+    ]
+  },
+  {
+    title: 'Дистанційне керування домівкою',
+    text: 'Трігер: ви знаходитеся на роботі і не впевнені, чи вимкнули світло вдома.',
+    tags: [
+      {
+        image: '../assets/blue-iphone.svg',
+        text: 'Ви відкриваєте мобільний додаток вашого розумного будинку'
+      },
+      {
+        image: '../assets/blue-accept.svg',
+        text: 'Перевіряєте стан засобів освітлення'
+      },
+      {
+        image: '../assets/blue-light.svg',
+        text: 'Вимикаєте світло'
+      }
+    ]
+  },
+  {
+    title: 'Клімат контроль',
+    text: 'Трігер: взимку ви хочете, щоб ваша домівка сильніше прогрівалася до вашого повернення з роботи.',
+    tags: [
+      {
+        image: '../assets/blue-iphone.svg',
+        text: 'Ви налаштовуєте графік інтенсивності опалення у додатку'
+      },
+      {
+        image: '../assets/blue-heating.svg',
+        text: 'Система опалювання буде працювати згідно обраного графіку'
+      }
+    ]
+  }
+]
+
+const popularScenarioList = document.querySelector('.scenario-modal__list')
+
+popularScenarioItems.forEach(item => {
+  const template = `
+    <div class="scenario-modal__item">
+      <div class="scenario-modal__item-title">${item.title}</div>
+      <div class="scenario-modal__item-text text">${item.text}</div>
+      <div class="scenario-modal__item-tags">
+        ${item.tags.map(tag => {
+          return `
+            <div class="scenario-modal__item-wrapper">
+              <div class="scenario-modal__item-tag tag">
+                <img src="${tag.image}" alt="Icon">
+                  <span>${tag.text}</span>
+              </div>
+              <img class="scenario-modal__item-icon" src="../assets/gray-arrow-right.svg" alt="Gray Arrow Icon">
+            </div>
+          `       
+        })}
+      </div>
+    </div>
+  `
+  popularScenarioList.innerHTML += template
+})
+
 dropdownSetup('.wireless-system')
 dropdownSetup('.save-bills')
 dropdownSetup('.have-questions')
 
 openModalHandler('.header__showroom', '.showroom-modal__backdrop')
 openModalHandler('.button.consultation', '.consultation-modal__backdrop')
+openModalHandler('.button.scenario', '.scenario-modal__backdrop')

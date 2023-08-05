@@ -12,8 +12,23 @@
 
 .build-system__container {
 
+  &.bg-lines .bg-lines__image {
+    top: -48px;
+  }
+
+  @media only screen and (min-width: 760px) {
+
+    &.bg-lines .bg-lines__image {
+      top: -90px;
+    }
+  }
+
   @media only screen and (min-width: 1160px) {
     position: relative;
+
+    &.bg-lines .bg-lines__image {
+      top: -160px;
+    }
   }
 }
 

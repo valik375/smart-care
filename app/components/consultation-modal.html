@@ -16,13 +16,14 @@
             у найближчий робочий час</div>
           <div class="input-group">
             <label for="name-consultation" class="label">Імʼя*</label>
-            <input class="input" id="name-consultation" type="text" placeholder="Введіть ваше імʼя" required>
+            <input class="input" id="name-consultation" name="name" type="text" placeholder="Введіть ваше імʼя" required>
           </div>
           <div class="input-group">
             <label for="phone-consultation" class="label">Телефон*</label>
             <input
               class="input"
               id="phone-consultation"
+              name="phone"
               value="+380"
               placeholder="+380XXXXXXXXX"
               type="tel"
@@ -32,7 +33,7 @@
           </div>
           <div class="input-group">
             <label class="label" for="email">Email</label>
-            <input class="input" id="email" type="email" placeholder="Введіть ваш email">
+            <input class="input" id="email" name="email" type="email" placeholder="Введіть ваш email">
           </div>
           <button class="form-modal__button button blue consultation" type="submit">
             <span>Передзвоніть мені</span>
