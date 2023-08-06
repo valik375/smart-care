@@ -242,7 +242,3 @@ popularScenarioItems.forEach(item => {
 dropdownSetup('.wireless-system')
 dropdownSetup('.save-bills')
 dropdownSetup('.have-questions')
-
-openModalHandler('.header__showroom', '.showroom-modal__backdrop')
-openModalHandler('.button.consultation', '.consultation-modal__backdrop')
-openModalHandler('.button.scenario', '.scenario-modal__backdrop')

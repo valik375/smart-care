@@ -92,3 +92,7 @@ cookieSubmitButton.addEventListener('click', () => {
   localStorage.setItem('cookie', JSON.stringify(cookieSettings))
   cookieMainWrapper.style.display = 'none'
 })
+
+openModalHandler('.header__showroom', '.showroom-modal__backdrop')
+openModalHandler('.button.consultation', '.consultation-modal__backdrop')
+openModalHandler('.button.scenario', '.scenario-modal__backdrop')
