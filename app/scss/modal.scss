@@ -16,12 +16,14 @@
   opacity: 0;
   pointer-events: none;
   transition: all .3s ease;
-  transform: translateY(100%);
 
   &.visible {
     opacity: 1;
     pointer-events: all;
-    transform: translateY(0);
+
+    .modal {
+      transform: translateY(0);
+    }
   }
 
   @media only screen and (min-width: 1160px) {
@@ -37,6 +39,8 @@
   padding: 16px;
   position: relative;
   overflow: hidden;
+  transform: translateY(50%);
+  transition: all .4s ease;
 
   @media only screen and (min-width: 760px) {
     max-width: 560px;
