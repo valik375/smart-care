@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../css/common.min.css">
+  <link rel="stylesheet" href="../css/calculator.min.css">
+  <title>Document</title>
+</head>
+<body>
+<main class="main">
+  <header class="header">
+    <div class="header__container">
+  
+      <div class="header__wrapper mobile">
+        <div class="header__left">
+          <a class="header__logo" href="/">
+            <img src="../assets/min-white-logo.svg" alt="Logo">
+          </a>
+        </div>
+  
+        <div class="header__right">
+          <button class="header__nav-button button blue consultation" type="button">
+            Консультація
+            <img src="../assets/white-arrow-right.svg" alt="Icon">
+          </button>
+          <div class="header__burger">
+            <div class="header__burger-line-1"></div>
+            <div class="header__burger-line-2"></div>
+            <div class="header__burger-line-3"></div>
+          </div>
+        </div>
+  
+        <div class="header__menu">
+  
+          <div class="header__actions">
+            <div class="header__location-dropdown simple-dropdown">
+              <div class="simple-dropdown-button button gray">
+                Київ
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_2337_16589)">
+                    <path d="M9.9999 13.3333C9.80519 13.3337 9.6165 13.2659 9.46657 13.1417L4.46657 8.97501C4.29639 8.83356 4.18937 8.6303 4.16905 8.40994C4.14874 8.18959 4.21679 7.97019 4.35824 7.80001C4.49969 7.62983 4.70295 7.52281 4.9233 7.50249C5.14366 7.48217 5.36306 7.55022 5.53324 7.69167L9.9999 11.425L14.4666 7.82501C14.5518 7.75578 14.6499 7.70409 14.7552 7.6729C14.8605 7.64171 14.9709 7.63163 15.0801 7.64324C15.1892 7.65486 15.2951 7.68794 15.3914 7.74058C15.4878 7.79323 15.5728 7.8644 15.6416 7.95001C15.7179 8.03569 15.7757 8.13621 15.8113 8.24527C15.847 8.35434 15.8598 8.46959 15.8488 8.58381C15.8379 8.69802 15.8034 8.80875 15.7477 8.90905C15.692 9.00935 15.6161 9.09705 15.5249 9.16667L10.5249 13.1917C10.3707 13.2963 10.1858 13.3461 9.9999 13.3333Z" fill="#84899A"/>
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_2337_16589">
+                      <rect width="20" height="20" fill="white"/>
+                    </clipPath>
+                  </defs>
+                </svg>
+              </div>
+              <div class="simple-dropdown-body">
+                <div class="header__location-item">
+                  <img src="../assets/black-location.svg" alt="Location Icon">
+                  Київ
+                </div>
+                <div class="header__location-info">
+                  <img src="../assets/gray-information.svg" alt="Information Icon">
+                  <span>Наразі ми пропонуємо наші послуги тільки в місті Київ.</span>
+                </div>
+              </div>
+            </div>
+            <div class="header__showroom button gray">
+              Відвідати Шоурум
+            </div>
+          </div>
+  
+          <a class="header__menu-link" href="/secure">
+            <span class="header__menu-link-text">Функції безпеки</span>
+            <img src="../assets/min-white-arrow-right.svg" alt="Icon">
+          </a>
+          <a class="header__menu-link" href="/comfort">
+            <span class="header__menu-link-text">Функції комфорту</span>
+            <img src="../assets/min-white-arrow-right.svg" alt="Icon">
+          </a>
+          <a class="header__menu-link" href="/calculator.html">
+            <span class="header__menu-link-text">Розрахувати вартість</span>
+            <img src="../assets/min-white-arrow-right.svg" alt="Icon">
+          </a>
+          <a class="header__menu-link phone" href="tel:+380955995733">
+            <img src="../assets/white-phone.svg" alt="Icon">
+            <span class="header__menu-link-text">+380 955 995 733</span>
+          </a>
+  
+          <div class="header__menu-action-wrapper">
+            <div class="header__menu-action-title">Бездротовий розумний будинок твоєї мрії</div>
+            <button class="header__nav-button button blue consultation" type="button">
+              Безкоштовна консультація
+              <img src="../assets/white-arrow-right.svg" alt="Icon">
+            </button>
+          </div>
+        </div>
+      </div>
+  
+      <div class="header__wrapper desktop">
+        <div class="header__left">
+          <a class="header__logo" href="/">
+            <img src="../assets/white-logo.svg" alt="Logo">
+          </a>
+          <a class="header__link" href="/secure">Безпека</a>
+          <a class="header__link" href="/comfort">Комфорт</a>
+          <a class="header__link" href="/calculator.html">Розрахувати вартість</a>
+        </div>
+        <div class="header__right">
+          <a class="header__link" href="tel:+380955995733">+380 955 995 733</a>
+          <div class="header__location-dropdown simple-dropdown">
+            <div class="simple-dropdown-button button gray">
+              Київ
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_2337_16589)">
+                  <path d="M9.9999 13.3333C9.80519 13.3337 9.6165 13.2659 9.46657 13.1417L4.46657 8.97501C4.29639 8.83356 4.18937 8.6303 4.16905 8.40994C4.14874 8.18959 4.21679 7.97019 4.35824 7.80001C4.49969 7.62983 4.70295 7.52281 4.9233 7.50249C5.14366 7.48217 5.36306 7.55022 5.53324 7.69167L9.9999 11.425L14.4666 7.82501C14.5518 7.75578 14.6499 7.70409 14.7552 7.6729C14.8605 7.64171 14.9709 7.63163 15.0801 7.64324C15.1892 7.65486 15.2951 7.68794 15.3914 7.74058C15.4878 7.79323 15.5728 7.8644 15.6416 7.95001C15.7179 8.03569 15.7757 8.13621 15.8113 8.24527C15.847 8.35434 15.8598 8.46959 15.8488 8.58381C15.8379 8.69802 15.8034 8.80875 15.7477 8.90905C15.692 9.00935 15.6161 9.09705 15.5249 9.16667L10.5249 13.1917C10.3707 13.2963 10.1858 13.3461 9.9999 13.3333Z" fill="#84899A"/>
+                </g>
+                <defs>
+                  <clipPath id="clip0_2337_16589">
+                    <rect width="20" height="20" fill="white"/>
+                  </clipPath>
+                </defs>
+              </svg>
+            </div>
+            <div class="simple-dropdown-body">
+              <div class="header__location-item">
+                <img src="../assets/black-location.svg" alt="Location Icon">
+                Київ
+              </div>
+              <div class="header__location-info">
+                <img src="../assets/gray-information.svg" alt="Information Icon">
+                <span>Наразі ми пропонуємо наші послуги тільки в місті Київ.</span>
+              </div>
+            </div>
+          </div>
+          <div class="header__showroom button gray">
+            Відвідати Шоурум
+          </div>
+          <button class="header__nav-button button blue consultation" type="button">
+            Консультація
+            <img src="../assets/white-arrow-right.svg" alt="Icon">
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section class="calculator__banner">
+    <div class="functions-page__container container">
+      <div class="functions-page__banner">
+        <h1 class="functions-page__title">Розумний будинок доступніший, ніж ви вважали</h1>
+        <p class="functions-page__text text">Пройдіть швидке опитування, щоб дізнатися скільки коштуватиме розумний
+          будинок під ваші вимоги. Ми не вимагатимемо ваш телефон чи пошту.</p>
+        <button class="functions-page__button button blue calculator" type="button">
+          Розрахувати вартість
+        </button>
+        <img class="functions-page__image" src="../assets/calculator-banner-image.png" alt="Image">
+      </div>
+      <div class="functions-page__label">
+        <div class="functions-page__label-image">
+          <img src="../assets/white-info.svg" alt="Info Icon">
+        </div>
+        <span>
+            Ми підрахуємо орієнтовану вартість розумного згідно ваших потреб. Додатковими чинниками, що формують вартість
+            є виробник пристроїв, кількість суенаріїв автоматизації та складність монтажу системи.
+          </span>
+      </div>
+    </div>
+  </section>
+  <div class="confirm-modal__backdrop modal__backdrop">
+  
+    <div class="confirm-modal modal">
+      <a href="/" class="modal__close">
+        <img src="../assets/white-cross.svg" alt="Cross">
+      </a>
+      <div class="confirm-modal__accept">
+        <img src="../assets/white-accept.svg" alt="Icon">
+      </div>
+      <div class="confirm-modal__title">Дякуємо!</div>
+      <div class="confirm-modal__text text">Ми отримали ваші контактні дані та незабаром звʼяжемося з вами.</div>
+      <a class="confirm-modal__button button gray" href="/">Повернутися на головну</a>
+    </div>
+  
+  </div>
+  <div class="calculator-modal__backdrop">
+    <div class="calculator-modal__card card">
+      <div class="calculator-modal__container container">
+        <div class="calculator-modal__close">
+          <img src="../assets/white-cross.svg" alt="Cross">
+        </div>
+        <div class="calculator-modal__body">
+  
+        </div>
+        <div class="calculator-modal__nav">
+          <div class="calculator-modal__progress">
+            <div class="calculator-modal__step step_1 active"></div>
+            <div class="calculator-modal__step step_2"></div>
+            <div class="calculator-modal__step step_3"></div>
+            <div class="calculator-modal__step step_4"></div>
+            <div class="calculator-modal__step step_5"></div>
+          </div>
+          <div class="calculator-modal__button-group">
+            <button class="calculator-modal__back button" type="button">Назад</button>
+            <button class="calculator-modal__next button blue" type="button">
+              Далі
+              <img src="../assets/white-arrow-right.svg" alt="Icon">
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="footer__container container">
+      <div class="footer__content">
+        <div class="footer__about">
+          <img class="footer__logo" src="../assets/white-logo.svg" alt="White Logo">
+          <p class="footer__text text">Ми - ваші провідники у світ інновацій та прогресу, готові відкривати двері
+            до неймовірних можливостей.</p>
+          <div class="footer__social">
+            <a class="footer__social-links" href="" target="_blank">
+              <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_2309_10102)">
+                  <path d="M10.5013 1.66699C12.7655 1.66699 13.048 1.67533 13.9363 1.71699C14.8238 1.75866 15.428 1.89783 15.9596 2.10449C16.5096 2.31616 16.973 2.60283 17.4363 3.06533C17.8605 3.48199 18.188 3.98616 18.3971 4.54199C18.603 5.07283 18.743 5.67783 18.7846 6.56533C18.8238 7.45366 18.8346 7.73616 18.8346 10.0003C18.8346 12.2645 18.8263 12.547 18.7846 13.4353C18.743 14.3228 18.603 14.927 18.3971 15.4587C18.1885 16.0151 17.8606 16.5192 17.4363 16.9353C17.0196 17.3587 16.5155 17.687 15.9596 17.8962C15.4288 18.102 14.8238 18.242 13.9363 18.2837C13.048 18.3228 12.7655 18.3337 10.5013 18.3337C8.23714 18.3337 7.95464 18.3253 7.0663 18.2837C6.1788 18.242 5.57464 18.102 5.04297 17.8962C4.48657 17.6874 3.98257 17.3594 3.5663 16.9353C3.14247 16.5188 2.81458 16.0149 2.60547 15.4587C2.3988 14.9278 2.25964 14.3228 2.21797 13.4353C2.1788 12.547 2.16797 12.2645 2.16797 10.0003C2.16797 7.73616 2.1763 7.45366 2.21797 6.56533C2.25964 5.67699 2.3988 5.07366 2.60547 4.54199C2.814 3.98548 3.14197 3.48143 3.5663 3.06533C3.98269 2.64135 4.48666 2.31343 5.04297 2.10449C5.57464 1.89783 6.17797 1.75866 7.0663 1.71699C7.95464 1.67783 8.23714 1.66699 10.5013 1.66699ZM10.5013 5.83366C9.39623 5.83366 8.33643 6.27265 7.55502 7.05405C6.77362 7.83545 6.33464 8.89526 6.33464 10.0003C6.33464 11.1054 6.77362 12.1652 7.55502 12.9466C8.33643 13.728 9.39623 14.167 10.5013 14.167C11.6064 14.167 12.6662 13.728 13.4476 12.9466C14.229 12.1652 14.668 11.1054 14.668 10.0003C14.668 8.89526 14.229 7.83545 13.4476 7.05405C12.6662 6.27265 11.6064 5.83366 10.5013 5.83366ZM15.918 5.62533C15.918 5.34906 15.8082 5.08411 15.6129 4.88876C15.4175 4.69341 15.1526 4.58366 14.8763 4.58366C14.6 4.58366 14.3351 4.69341 14.1397 4.88876C13.9444 5.08411 13.8346 5.34906 13.8346 5.62533C13.8346 5.90159 13.9444 6.16654 14.1397 6.3619C14.3351 6.55725 14.6 6.66699 14.8763 6.66699C15.1526 6.66699 15.4175 6.55725 15.6129 6.3619C15.8082 6.16654 15.918 5.90159 15.918 5.62533ZM10.5013 7.50033C11.1643 7.50033 11.8002 7.76372 12.2691 8.23256C12.7379 8.7014 13.0013 9.33728 13.0013 10.0003C13.0013 10.6634 12.7379 11.2993 12.2691 11.7681C11.8002 12.2369 11.1643 12.5003 10.5013 12.5003C9.83826 12.5003 9.20238 12.2369 8.73354 11.7681C8.26469 11.2993 8.0013 10.6634 8.0013 10.0003C8.0013 9.33728 8.26469 8.7014 8.73354 8.23256C9.20238 7.76372 9.83826 7.50033 10.5013 7.50033Z" fill="#84899A"/>
+                </g>
+                <defs>
+                  <clipPath id="clip0_2309_10102">
+                    <rect width="20" height="20" fill="white" transform="translate(0.5)"/>
+                  </clipPath>
+                </defs>
+              </svg>
+            </a>
+            <a class="footer__social-links" href="" target="_blank">
+              <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_2309_10110)">
+                  <path d="M17.168 3.33301H3.83464C3.39261 3.33301 2.96868 3.5086 2.65612 3.82116C2.34356 4.13372 2.16797 4.55765 2.16797 4.99967V14.9997C2.16797 15.4417 2.34356 15.8656 2.65612 16.1782C2.96868 16.4907 3.39261 16.6663 3.83464 16.6663H17.168C17.61 16.6663 18.0339 16.4907 18.3465 16.1782C18.659 15.8656 18.8346 15.4417 18.8346 14.9997V4.99967C18.8346 4.55765 18.659 4.13372 18.3465 3.82116C18.0339 3.5086 17.61 3.33301 17.168 3.33301ZM17.168 6.80383C17.168 7.08237 17.0288 7.34249 16.797 7.49701L10.9636 11.3864C10.6837 11.5731 10.3189 11.5731 10.039 11.3864L4.20559 7.49701C3.97383 7.34249 3.83464 7.08237 3.83464 6.80383C3.83464 6.13843 4.57622 5.74153 5.12988 6.11061L10.5013 9.69134L15.8727 6.11061C16.4264 5.74153 17.168 6.13843 17.168 6.80383Z" fill="#84899A"/>
+                </g>
+                <defs>
+                  <clipPath id="clip0_2309_10110">
+                    <rect width="20" height="20" fill="white" transform="translate(0.5)"/>
+                  </clipPath>
+                </defs>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer__nav">
+          <div class="footer__nav-title">Навігація</div>
+          <a class="footer__nav-item" href="">Головна</a>
+          <a class="footer__nav-item" href="">Безпека та захист</a>
+          <a class="footer__nav-item" href="">Продуктивність та комфорт</a>
+          <a class="footer__nav-item" href="">Розрахувати прайс</a>
+        </div>
+        <div class="footer__contacts">
+          <div class="footer__contacts-title">Наші контакти</div>
+          <a class="footer__contact-item" href="mailto:smarthome101@gmail.com">
+            <img src="../assets/gray-mail.svg" alt="Mail Icon">
+            smarthome101@gmail.com
+          </a>
+          <a class="footer__contact-item" href="tel:+380959779593">
+            <img src="../assets/gray-phone.svg" alt="Phone Icon">
+            +380 95 97 79 593
+          </a>
+          <a class="footer__contact-item" href="">
+            <img src="../assets/telegram-icon.svg" alt="Telegram Icon">
+            Telegram
+          </a>
+          <a class="footer__contact-item" href="">
+            <img src="../assets/viber-icon.svg" alt="Telegram Icon">
+            Viber
+          </a>
+          <a class="footer__contact-item" href="">
+            <img src="../assets/whats-app-icon.svg" alt="Whats app Icon">
+            WhatsApp
+          </a>
+        </div>
+        <div class="footer__consultation card">
+          <div class="footer__consultation-title">Бездротовий розумний будинок твоєї мрії</div>
+          <button class="footer__button-consultation button blue consultation">
+            Безкоштовна Консультація
+            <img src="../assets/white-arrow-right.svg" alt="Icon">
+          </button>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <div class="footer__bottom-left">
+          <span>© SmartHome усі права захищенні 2023</span>
+        </div>
+        <div class="footer__bottom-right">
+          <span>Terms & Conditions</span>
+          <span>Privacy policy</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div class="showroom-modal__backdrop modal__backdrop">
+  
+    <div class="showroom-modal modal">
+      <div class="showroom-modal__container form-modal">
+        <div class="modal__close">
+          <img src="../assets/white-cross.svg" alt="Cross">
+        </div>
+        <div class="form-modal__left">
+          <img class="form-modal__icon" src="../assets/form-mail-icon.svg" alt="Mail Icon">
+          <div class="form-modal__title">Запис у шоурум в Києві</div>
+          <div class="form-modal__text">У нашому шоурумі ви побачите системи оснащення розумного будинку та як вони
+            працюють. Ми допоможемо підібрати необхідне оснащення згідно ваших потреб та бюджету.</div>
+        </div>
+        <div class="form-modal__right">
+          <form class="form-modal__form" action="https://formspree.io/f/xdoravdr" method="POST">
+            <div class="form-modal__form-title">Залиште свої контакти і бажану дату з часом, ми передзвонимо
+              вам для їх узгодження</div>
+            <div class="input-group">
+              <label for="name" class="label">Імʼя*</label>
+              <input class="input" id="name" name="name" type="text" placeholder="Введіть ваше імʼя" required>
+            </div>
+            <div class="input-group">
+              <label for="date" class="label">Бажана дата та час*</label>
+              <input class="input" id="date" name="date" type="date" required>
+            </div>
+            <div class="input-group">
+              <label for="phone" class="label">Телефон*</label>
+              <input
+                class="input"
+                id="phone"
+                name="phone"
+                value="+380"
+                placeholder="+380XXXXXXXXX"
+                type="tel"
+                pattern="^\+380[0-9]{9}$"
+                title="Введіть данні в форматі +380XXXXXXXXX"
+                required
+              >
+            </div>
+            <button class="form-modal__button button blue" type="submit">
+              <span>Передзвоніть мені</span>
+            </button>
+          </form>
+          <div class="form-modal__location">
+            <img src="../assets/gray-location.svg" alt="Location Icon">
+            м. Київ, вул. Хрещатик 32/4
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+  <div class="consultation-modal__backdrop modal__backdrop">
+  
+    <div class="consultation-modal modal">
+      <div class="consultation-modal__container form-modal">
+        <div class="modal__close">
+          <img src="../assets/white-cross.svg" alt="Cross">
+        </div>
+        <div class="form-modal__left">
+          <img class="form-modal__icon" src="../assets/form-mail-icon.svg" alt="Mail Icon">
+          <div class="form-modal__title">Залишилися питання? Замовте безкоштовну консультацію</div>
+          <div class="form-modal__text">Ми допоможемо підібрати системи розумного будинку саме під ваші потреби та бюджет.</div>
+        </div>
+        <div class="form-modal__right">
+          <form class="form-modal__form">
+            <div class="form-modal__form-title">Залиште свої контакти і ми звʼяжемося з вами
+              у найближчий робочий час</div>
+            <div class="input-group">
+              <label for="name-consultation" class="label">Імʼя*</label>
+              <input class="input" id="name-consultation" name="name" type="text" placeholder="Введіть ваше імʼя" required>
+            </div>
+            <div class="input-group">
+              <label for="phone-consultation" class="label">Телефон*</label>
+              <input
+                class="input"
+                id="phone-consultation"
+                name="phone"
+                value="+380"
+                placeholder="+380XXXXXXXXX"
+                type="tel"
+                pattern="^\+380[0-9]{9}$"
+                title="Введіть данні в форматі +380XXXXXXXXX"
+                required
+              >
+            </div>
+            <div class="input-group">
+              <label class="label" for="email">Email</label>
+              <input class="input" id="email" name="email" type="email" placeholder="Введіть ваш email">
+            </div>
+            <button class="form-modal__button button blue consultation" type="submit">
+              <span>Передзвоніть мені</span>
+            </button>
+          </form>
+          <div class="form-modal__contact-title">Або звʼяжіться з нами вже зараз</div>
+          <div class="form-modal__contacts">
+            <a class="form-modal__contact-item" href="">
+              <img src="../assets/telegram-icon.svg" alt="Telegram icon">
+            </a>
+            <a class="form-modal__contact-item" href="">
+              <img src="../assets/viber-icon.svg" alt="Viber icon">
+            </a>
+            <a class="form-modal__contact-item" href="">
+              <img src="../assets/whats-app-icon.svg" alt="Whats app icon">
+            </a>
+            <a class="form-modal__contact-item phone" href="">
+              <img src="../assets/white-phone.svg" alt="Phone icon">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+  <div class="cookie">
+    <div class="cookie__container card">
+      <div class="cookie__body">
+        <div class="cookie__header">
+          <div class="cookie__header-title">Ми цінуємо вашу конфеденційність</div>
+          <div class="cookie__header-text text">Ми використовуємо кукі-файли, щоб забезпечити для вас якнайкращі враження
+            від користування сайтом та покращити доцільність наших контактів з вами.</div>
+        </div>
+        <div class="cookie__agreements">
+          <div class="cookie__item">
+            <div class="cookie__item-left">
+              <div class="cookie__item-title">Дозволяю кукі-файли, що відповідають за аналітику</div>
+              <div class="cookie__item-text text">Збирайте інформацію про те, як ви користуєтесь нашим веб-сайтом.
+                Допоможіть нам покращити функції, виявивши будь-яку помилку на нашому веб-сайті.</div>
+            </div>
+            <div class="cookie__item-right">
+              <label class="input-checkbox" for="cookie-analytics">
+                <input type="checkbox" id="cookie-analytics" checked>
+                <span class="circle"></span>
+              </label>
+            </div>
+          </div>
+          <div class="cookie__item">
+            <div class="cookie__item-left">
+              <div class="cookie__item-title">Дозволяю кукі-файли, що відповідають за маркетинг</div>
+              <div class="cookie__item-text text">Збирайте інформацію про те, як ви користуєтесь нашим веб-сайтом.
+                Допоможіть нам покращити функції, виявивши будь-яку помилку на нашому веб-сайті.</div>
+            </div>
+            <div class="cookie__item-right">
+              <label class="input-checkbox" for="cookie-marketing">
+                <input type="checkbox" id="cookie-marketing" checked>
+                <span class="circle"></span>
+              </label>
+            </div>
+          </div>
+          <div class="cookie__item">
+            <div class="cookie__item-left">
+              <div class="cookie__item-title">Дозволяю кукі-файли, що передають дані соцмережам</div>
+              <div class="cookie__item-text text">Підтримка функцій обміну на веб-сайтах партнерів.Реклама
+                нашої продукції на веб-сайтах партнерів та соціальних мереж.</div>
+            </div>
+            <div class="cookie__item-right">
+              <label class="input-checkbox" for="cookie-social">
+                <input type="checkbox" id="cookie-social" checked>
+                <span class="circle"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cookie__nav">
+        <button class="cookie__button-params button dark" type="button">Змінити параметри</button>
+        <button class="cookie__button-submit button blue" type="button">Прийняти усі</button>
+      </div>
+    </div>
+  </div>
+</main>
+<script src="../js/main.min.js"></script>
+<script src="../js/calculator.min.js"></script>
+</body>
+</html>

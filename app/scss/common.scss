@@ -413,6 +413,10 @@ body {
     color: $gray-100;
     outline: none;
 
+    &:focus {
+      border-color: $blue;
+    }
+
     &::placeholder {
       font-size: 14px;
       font-weight: 500;
