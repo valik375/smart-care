@@ -1,0 +1,77 @@
+@import './vars';
+
+.terms-conditions {
+  padding-top: 116px;
+
+  @media only screen and (min-width: 760px) {
+    padding-top: 160px;
+  }
+
+  @media only screen and (min-width: 1160px) {
+    padding: 190px 0;
+  }
+}
+
+.terms-conditions__container {
+
+  @media only screen and (min-width: 1160px) {
+    max-width: 826px;
+  }
+}
+
+.terms-conditions__title {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 150%;
+  letter-spacing: 0.22px;
+  color: $white;
+  margin-bottom: 16px;
+}
+
+.terms-conditions__text {
+  font-size: 15px;
+  margin-bottom: 32px;
+}
+
+.terms-conditions__info {
+
+  h2 {
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 150%;
+    color: $white;
+    margin-bottom: 16px;
+  }
+
+  p {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 160%;
+    color: $dark-500;
+    margin-bottom: 32px;
+  }
+
+  .terms-conditions__sub-info {
+
+    h3 {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 155%;
+      color: $white;
+      margin-bottom: 16px;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
