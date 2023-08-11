@@ -1,0 +1,62 @@
+<div class="consultation-modal__backdrop modal__backdrop">
+
+  <div class="consultation-modal modal">
+    <div class="consultation-modal__container form-modal">
+      <div class="modal__close">
+        <img src="../assets/white-cross.svg" alt="Cross">
+      </div>
+      <div class="form-modal__left">
+        <img class="form-modal__icon" src="../assets/form-mail-icon.svg" alt="Mail Icon">
+        <div class="form-modal__title">Залишилися питання? Замовте безкоштовну консультацію</div>
+        <div class="form-modal__text">Ми допоможемо підібрати системи розумного будинку саме під ваші потреби та бюджет.</div>
+      </div>
+      <div class="form-modal__right">
+        <form action="https://formspree.io/f/xdoravdr" class="form-modal__form">
+          <div class="form-modal__form-title">Залиште свої контакти і ми звʼяжемося з вами
+            у найближчий робочий час</div>
+          <div class="input-group">
+            <label for="name-consultation" class="label">Імʼя*</label>
+            <input class="input" id="name-consultation" name="name" type="text" placeholder="Введіть ваше імʼя" required>
+          </div>
+          <div class="input-group">
+            <label for="phone-consultation" class="label">Телефон*</label>
+            <input
+              class="input"
+              id="phone-consultation"
+              name="phone"
+              value="+380"
+              placeholder="+380XXXXXXXXX"
+              type="tel"
+              pattern="^\+380[0-9]{9}$"
+              title="Введіть данні в форматі +380XXXXXXXXX"
+              required
+            >
+          </div>
+          <div class="input-group">
+            <label class="label" for="email">Email</label>
+            <input class="input" id="email" name="email" type="email" placeholder="Введіть ваш email">
+          </div>
+          <button class="form-modal__button button blue consultation" type="submit">
+            <span>Передзвоніть мені</span>
+          </button>
+        </form>
+        <div class="form-modal__contact-title">Або звʼяжіться з нами вже зараз</div>
+        <div class="form-modal__contacts">
+          <a class="form-modal__contact-item" href="">
+            <img src="../assets/telegram-icon.svg" alt="Telegram icon">
+          </a>
+          <a class="form-modal__contact-item" href="">
+            <img src="../assets/viber-icon.svg" alt="Viber icon">
+          </a>
+          <a class="form-modal__contact-item" href="">
+            <img src="../assets/whats-app-icon.svg" alt="Whats app icon">
+          </a>
+          <a class="form-modal__contact-item phone" href="">
+            <img src="../assets/white-phone.svg" alt="Phone icon">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
