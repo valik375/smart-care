@@ -13,6 +13,10 @@
   }
 }
 
+.animation__container {
+  position: relative;
+}
+
 .animation__video {
   width: 100%;
 
@@ -84,18 +88,4 @@
   @media only screen and (min-width: 760px) {
     display: none;
   }
-}
-
-.animation__close-video {
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  right: 24px;
-  bottom: 24px;
-  background: $dark-600;
-  border-radius: 6px;
-  z-index: 999999999;
 }

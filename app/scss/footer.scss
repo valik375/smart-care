@@ -1,7 +1,7 @@
 @import './vars';
 
 .footer {
-  border-radius: 0 0 20px 20px;
+  border-radius: 20px 20px 0 0;
   background: $dark-900;
   padding: 40px 0 24px;
   box-shadow: 0px -20px 40px 0 rgba(18, 19, 23, 0.30);
@@ -159,6 +159,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-top: 80px;
 
     span, a {
       margin-bottom: 0;

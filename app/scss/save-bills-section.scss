@@ -12,6 +12,12 @@
   }
 }
 
+.save-bills__container {
+  @media only screen and (min-width: 1160px) {
+    flex-direction: row-reverse;
+  }
+}
+
 .save-bills__info {
   margin-bottom: 32px;
 }

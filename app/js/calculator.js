@@ -212,7 +212,24 @@ const prevButton = document.querySelector('.calculator-modal__back')
 // -------- CHOOSE ----------
 
 const chooseVariant = (event, index) => {
-  event.target.classList.toggle('selected')
+  if (currentStep === 0) {
+    chooseFlatHandler(event, index)
+  } else {
+    chooseHandler(event, index)
+  }
+}
+const chooseFlatHandler = (event, index) => {
+  const variantSelect = document.querySelectorAll('.calculator-modal__template-choose-item')
+  variantSelect.forEach((variant, variantIndex) => {
+    variantIndex === index ? variant.classList.add('selected') : variant.classList.remove('selected')
+  })
+  currentTemplate.variants.map((variant, variantIndex) => {
+    variant.value = variantIndex === index
+  })
+}
+const chooseHandler = (event, index) => {
+  const variantSelect = document.querySelectorAll('.calculator-modal__template-choose-item')[index]
+  variantSelect.classList.toggle('selected')
   currentTemplate.variants[index].value = !currentTemplate.variants[index].value
 }
 const chooseTemplate = (item) => {
@@ -273,6 +290,9 @@ const rangeTemplate = (item) => {
             max="400" 
             onchange="changeRange(event)"
           >
+          <div class="calculator-modal__range-splitter left"></div>
+          <div class="calculator-modal__range-splitter center"></div>
+          <div class="calculator-modal__range-splitter right"></div>
           <div class="calculator-modal__range-values">
             <div class="calculator-modal__range-value">10</div>
             <div class="calculator-modal__range-value">100</div>
@@ -334,6 +354,15 @@ const formTemplate = () => {
             <div class="calculator-modal_final-dropdown-title">~ $1970</div>
             <div class="calculator-modal_final-dropdown-icon">
               <img src="../assets/gray-information.svg" alt="Icon">
+              <div class="calculator-modal_final-info">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="5" viewBox="0 0 13 5" fill="none">
+                  <path d="M12.5 5L7.95308 1.08768C7.2209 0.457695 6.1431 0.440996 5.39176 1.048L0.5 5L12.5 5Z" fill="#2E3038"/>
+                </svg>
+                Ціна розрахована на основі необхідного мінімуму для обраних функцій, 
+                типу та кількості кімнат. Наприклад, якщо у будинку одна ванна кімната 
+                та одна кухня, системі антипотопу у базі необхідно 2 датчика води 
+                (по одному у кожну з кімнат).
+              </div>
             </div>
           </div>
           <div class="calculator-modal_final-dropdown-right">

@@ -20,9 +20,13 @@
   }
 
   @media only screen and (min-width: 1160px) {
-    right: calc(50% - 580px);
+    right: 24px;
     padding: 32px;
   }
+}
+
+.scenario-modal__wrapper {
+  height: 100%;
 }
 
 .scenario-modal__title {
@@ -42,7 +46,12 @@
 }
 
 .scenario-modal__list {
+  height: calc(100% - 140px);
+  overflow-y: auto;
 
+  @media only screen and (min-width: 1160px) {
+    height: calc(100% - 110px);
+  }
 }
 
 .scenario-modal__item {
@@ -88,3 +97,6 @@
   margin: 0 2px;
 }
 
+.scenario-modal__button {
+  margin-top: 10px;
+}

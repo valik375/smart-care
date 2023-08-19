@@ -1,17 +1,50 @@
 const featureDropdownButton = document.querySelector('.banner__house-feature-button')
 const featuresWrapper = document.querySelector('.banner__house-features')
 
+let isFeaturesWrapper = false
+
 featureDropdownButton.addEventListener('click', () => {
-  featuresWrapper.classList.toggle('show')
+  isFeaturesWrapper = !isFeaturesWrapper
+  if (isFeaturesWrapper) {
+    featuresWrapper.classList.add('show')
+    featureDropdownButton.innerHTML = `
+      Приховати
+      <img src="../assets/gray-arrow-down.svg" alt="Arrow Down">
+    `
+  } else {
+    featuresWrapper.classList.remove('show')
+    featureDropdownButton.innerHTML = `
+      Показати усі можливості
+      <img src="../assets/gray-arrow-down.svg" alt="Arrow Down">
+    `
+    location.href = '#banner-house-features'
+  }
 })
 
-const featuresExampleButton = document.querySelectorAll('.features__item-example-play')
+const pauseAnimationOnTouch = (selector) => {
+  selector.addEventListener('touchstart', () => {
+    setTimeout(() => {
+      selector.classList.add('stop')
+    }, 2000)
+  })
 
+  selector.addEventListener('touchend', () => {
+    selector.classList.remove('stop')
+  })
+}
+
+const statisticsContainer = document.querySelectorAll('.statistics__container')
+statisticsContainer.forEach(statistic => {
+  pauseAnimationOnTouch(statistic)
+})
+const productsCompanys = document.querySelector('.products__companys')
+pauseAnimationOnTouch(productsCompanys)
+
+const featuresExampleButton = document.querySelectorAll('.features__item-example-play')
 const movieUrls = {
   0: '../assets/house-fire-scenario.gif',
   1: '../assets/house-comfort-performance.gif'
 }
-
 featuresExampleButton.forEach((item, index) => {
   const movieGif = new Image()
   movieGif.src = movieUrls[index]
@@ -25,6 +58,29 @@ featuresExampleButton.forEach((item, index) => {
       movieWrapper.classList.remove('show')
     }, 8500)
   })
+})
+const videoObserver = new IntersectionObserver((sections) => {
+  sections.forEach(section => {
+    if (section.isIntersecting) {
+      const video = section.target.children[0]
+      const movieGif = new Image()
+      movieGif.src = movieUrls[video.dataset.id]
+      movieGif.className = 'features__item-example-gif'
+      section.target.classList.add('show')
+      section.target.appendChild(movieGif)
+      setTimeout(() => {
+        section.target.classList.remove('show')
+      }, 8500)
+    }
+  })
+}, {
+  root: null,
+  rootMargin: '10px',
+  threshold: 0.5
+})
+
+document.querySelectorAll('.features__item-example-movie').forEach(section => {
+  videoObserver.observe(section)
 })
 
 const tabButtons = document.querySelectorAll('.convenient-control__tab-item')
@@ -70,7 +126,6 @@ const opportunityValues = [
     },
   ]
 ]
-
 tabButtons.forEach((button, index) => {
   button.addEventListener('click', () => {
     if (index === 0) {
@@ -93,16 +148,18 @@ tabButtons.forEach((button, index) => {
   })
 })
 
-const mobileVideoWrapper = document.querySelector('.animation__video-mobile')
+const mobileVideo = document.querySelector('.animation__video video')
 
 document.querySelector('.animation__fullscreen-button').addEventListener('click', () => {
-  mobileVideoWrapper.classList.add('visible')
-  mobileVideoWrapper.children[0].play()
-})
-
-document.querySelector('.animation__close-video').addEventListener('click', () => {
-  mobileVideoWrapper.classList.remove('visible')
-  mobileVideoWrapper.children[0].pause()
+  if (mobileVideo.requestFullscreen) {
+    mobileVideo.requestFullscreen()
+  } else if (mobileVideo.mozRequestFullScreen) {
+    mobileVideo.mozRequestFullScreen()
+  } else if (mobileVideo.webkitRequestFullscreen) {
+    mobileVideo.webkitRequestFullscreen()
+  } else if (mobileVideo.msRequestFullscreen) {
+    mobileVideo.msRequestFullscreen()
+  }
 })
 
 const popularScenarioItems = [
@@ -237,6 +294,35 @@ popularScenarioItems.forEach(item => {
     </div>
   `
   popularScenarioList.innerHTML += template
+})
+
+const fixedNavigatedSections = document.querySelectorAll('.navigation-section')
+const fixedNavigatedItems = document.querySelectorAll('.fixed-navigation__item')
+const options = {
+  root: null,
+  rootMargin: '10px',
+  threshold: 0.5
+}
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && entry.target.id) {
+      const sectionIndex = parseInt(entry.target.dataset.index)
+      fixedNavigatedItems[sectionIndex].classList.add('active')
+    } else {
+      fixedNavigatedItems.forEach(item => {
+        item.classList.remove('active')
+      })
+    }
+  })
+}, options)
+
+fixedNavigatedSections.forEach((section, index) => {
+  section.dataset.index = index.toString()
+  observer.observe(section)
+})
+
+document.querySelector('.scenario-modal__button').addEventListener('click', () => {
+  document.querySelector('.scenario-modal__backdrop').classList.remove('visible')
 })
 
 dropdownSetup('.wireless-system')

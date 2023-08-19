@@ -269,7 +269,7 @@
 
   @media only screen and (min-width: 1160px) {
     transition: all .3s ease;
-    max-width: 403px;
+    max-width: 416px;
     border: 1px solid $blue;
     margin: 0;
     opacity: 0;
@@ -425,6 +425,10 @@
   line-height: 25px;
   color: $white;
   margin-bottom: 4px;
+}
+
+.banner__benefits-text {
+  font-size: 14px;
 }
 
 .banner__benefits-automation {

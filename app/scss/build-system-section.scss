@@ -1,5 +1,8 @@
+@import './vars';
+
 .build-system {
   padding: 48px 0;
+  background: $dark-950;
 
   @media only screen and (min-width: 760px) {
     padding: 90px 0;
@@ -7,6 +10,10 @@
 
   @media only screen and (min-width: 1160px) {
     padding: 160px 0;
+
+    .bg-lines__image.desktop {
+      z-index: 1;
+    }
   }
 }
 
@@ -42,9 +49,15 @@
 }
 
 .build-system__title {
+  font-size: 28px !important;
+  line-height: 150% !important;
 
   @media only screen and (min-width: 760px) {
     font-size: 40px !important;
+
+    br {
+      display: none;
+    }
   }
 
   @media only screen and (min-width: 1160px) {

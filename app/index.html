@@ -5,11 +5,62 @@
   <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+      .loader {
+          width: 100%;
+          height: 100vh;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: fixed;
+          left: 0;
+          top: 0;
+          z-index: 999999999;
+          background: #17181c;
+          transition: all .5s ease;
+      }
+      .loader.hidden {
+          opacity: 0;
+          pointer-events: none;
+      }
+      .spinner {
+          position: relative;
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+      }
+      .spinner::before,
+      .spinner:after {
+          content: "";
+          position: absolute;
+          border-radius: inherit;
+      }
+      .spinner:before {
+          width: 100%;
+          height: 100%;
+          background-image: linear-gradient(0deg, #5D75EF 0%, #17181c 100%);
+          animation: spin8932 .5s infinite linear;
+      }
+      .spinner:after {
+          width: 85%;
+          height: 85%;
+          background-color: #17181c;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+      }
+      @keyframes spin8932 {
+          to {
+              transform: rotate(360deg);
+          }
+      }
+  </style>
   <link rel="stylesheet" href="../css/common.min.css">
   <link rel="stylesheet" href="../css/home-page.min.css">
   <title>Document</title>
 </head>
 <body>
+  <div class="loader"><div class="spinner"></div></div>
   <main class="main">
     <header class="header">
       <div class="header__container">
@@ -141,7 +192,7 @@
       </div>
     </header>
     <div class="fixed-navigation">
-      <a class="fixed-navigation__item" href="#banner">
+      <a class="fixed-navigation__item active" href="#banner">
         <span class="fixed-navigation__dot"></span>
         <span class="fixed-navigation__section-name">Огляд</span>
       </a>
@@ -182,7 +233,7 @@
         <span class="fixed-navigation__section-name">Відповіді на питання</span>
       </a>
     </div>
-    <section class="banner" id="banner">
+    <section class="banner navigation-section" id="banner">
       <div class="banner__container container">
         <div class="banner__wrapper">
     
@@ -226,7 +277,7 @@
               </div>
             </div>
     
-            <div class="banner__house-features">
+            <div class="banner__house-features" id="banner-house-features">
     
               <div class="banner__house-feature-hover">
                 <img class="banner__house-feature-pin" src="../assets/smart-pin.svg" alt="Pin Icon">
@@ -527,7 +578,7 @@
         </div>
       </div>
     </section>
-    <section class="service" id="service">
+    <section class="service navigation-section" id="service">
       <div class="service__container bg-lines">
         <div class="service__info container">
           <div class="service__title-wrapper section-title-wrapper">
@@ -582,7 +633,7 @@
         <img class="bg-lines__image mobile" src="../assets/service-bg-lines-mobile.png" alt="Background lines">
       </div>
     </section>
-    <section class="features" id="features">
+    <section class="features navigation-section" id="features">
       <div class="features__container container">
     
         <div class="features__info">
@@ -631,15 +682,15 @@
                 <span>+3</span>
               </div>
             </div>
-            <button class="features__item-button button blue consultation">
+            <a href="/security.html" class="features__item-button button blue">
               <span>Усі функції безпеки</span>
               <img src="../assets/white-arrow-right.svg" alt="Arrow Icon">
-            </button>
+            </a>
           </div>
     
           <div class="features__item-example">
             <div class="features__item-example-movie">
-              <img class="features__item-example-banner" src="../assets/house-fire-scenario.png" alt="House">
+              <img class="features__item-example-banner" data-id="0" src="../assets/house-fire-scenario.png" alt="House">
               <button class="features__item-example-play button dark">
                 <img src="../assets/gray-play.svg" alt="Play Icon">
                 Відтворити
@@ -701,15 +752,15 @@
                 <span>+3</span>
               </div>
             </div>
-            <button class="features__item-button button blue consultation">
-              <span>Усі функції безпеки</span>
+            <a href="/comfort.html" class="features__item-button button blue">
+              <span>Усі функції комфорту</span>
               <img src="../assets/white-arrow-right.svg" alt="Arrow Icon">
-            </button>
+            </a>
           </div>
     
           <div class="features__item-example">
             <div class="features__item-example-movie">
-              <img class="features__item-example-banner" src="../assets/house-comfort-performance.png" alt="House">
+              <img class="features__item-example-banner" data-id="1" src="../assets/house-comfort-performance.png" alt="House">
               <button class="features__item-example-play button dark">
                 <img src="../assets/gray-play.svg" alt="Play Icon">
                 Відтворити
@@ -754,7 +805,7 @@
             <p class="anti-flood__text text">Новітня розробка від Tuya керується віддалено через телефон, а також працює зі
               сценаріями автоматизації. Розумний кран попередить потоп, зупинивши подачу води, якщо тиск у системі вище норми,
               або надішле вам повідомлення, якщо води у системі немає.</p>
-            <button class="anti-flood__button button blue scenario" type="button">
+            <button class="anti-flood__button button blue consultation" type="button">
               <span>Я хочу таку функцію</span>
               <img src="../assets/white-arrow-right.svg" alt="Arrow Icon">
             </button>
@@ -765,7 +816,7 @@
         </div>
       </div>
     </section>
-    <section class="processes-automation" id="processes-automation">
+    <section class="processes-automation navigation-section" id="processes-automation">
       <div class="processes-automation__container container">
     
         <div class="processes-automation__info">
@@ -805,7 +856,7 @@
     <section class="animation">
       <div class="animation__container container">
         <div class="animation__video">
-          <video src="../assets/animation-section-video.mp4" autoplay muted loop controls></video>
+          <video src="../assets/animation-section-video.mp4" autoplay muted loop></video>
         </div>
     
         <div class="animation__fullscreen-button">
@@ -822,16 +873,9 @@
           </svg>
           На весь екран
         </div>
-    
-        <div class="animation__video-mobile">
-          <video src="../assets/animation-section-video.mp4" autoplay muted controls></video>
-          <div class="animation__close-video">
-            <img src="../assets/white-cross.svg" alt="Cross icon">
-          </div>
-        </div>
       </div>
     </section>
-    <section class="convenient-control" id="convenient-control">
+    <section class="convenient-control navigation-section" id="convenient-control">
       <div class="convenient-control__container">
         <div class="convenient-control__info container">
           <div class="convenient-control__title-wrapper section-title-wrapper">
@@ -930,7 +974,7 @@
         </div>
       </div>
     </section>
-    <section class="advantages" id="advantages">
+    <section class="advantages navigation-section" id="advantages">
       <div class="advantages__container container">
     
         <div class="advantages__info">
@@ -984,7 +1028,41 @@
     
       </div>
     </section>
-    <section class="wireless-system" id="wireless-system">
+    <section class="statistics">
+      <img class="statistics__background" src="../assets/statistics-line-bg.png" alt="Background">
+      <img class="statistics__background-transparent" src="../assets/statistics-line-bg.png" alt="Background">
+      <div class="statistics__container">
+        <div class="statistics__wrapper first">
+          <div class="statistics__item">
+            <div class="statistics__value">5+</div>
+            <div class="statistics__text">Років на ринку</div>
+          </div>
+          <div class="statistics__item">
+            <div class="statistics__value">200+</div>
+            <div class="statistics__text">Задоволених клієнтів</div>
+          </div>
+          <div class="statistics__item">
+            <div class="statistics__value">100+</div>
+            <div class="statistics__text">Функцій комфорту</div>
+          </div>
+        </div>
+        <div class="statistics__wrapper second">
+          <div class="statistics__item">
+            <div class="statistics__value">5+</div>
+            <div class="statistics__text">Років на ринку</div>
+          </div>
+          <div class="statistics__item">
+            <div class="statistics__value">200+</div>
+            <div class="statistics__text">Задоволених клієнтів</div>
+          </div>
+          <div class="statistics__item">
+            <div class="statistics__value">100+</div>
+            <div class="statistics__text">Функцій комфорту</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="wireless-system navigation-section" id="wireless-system">
       <div class="wireless-system__container container two-column-section">
     
         <div class="wireless-system__left column-left">
@@ -1071,7 +1149,7 @@
     
       </div>
     </section>
-    <section class="products" id="products">
+    <section class="products navigation-section" id="products">
       <div class="products__container container bg-lines">
         <div class="products__info">
           <div class="products__title-wrapper section-title-wrapper">
@@ -1141,7 +1219,7 @@
         <img class="bg-lines__image mobile" src="../assets/products-bg-lines-mobile.png" alt="Background lines">
       </div>
     </section>
-    <section class="save-bills" id="save-bills">
+    <section class="save-bills navigation-section" id="save-bills">
       <div class="save-bills__container container two-column-section">
     
         <div class="save-bills__left column-left">
@@ -1153,9 +1231,9 @@
         <div class="save-bills__right column-right">
           <div class="save-bills__info">
             <div class="save-bills__title-wrapper section-title-wrapper">
-              <h3 class="save-bills__subtitle section-subtitle">Бездротова система</h3>
+              <h3 class="save-bills__subtitle section-subtitle">Заощаджуйте на рахунках </h3>
               <h2 class="save-bills__title section-title">
-                Переваги системи бездротового розумного будинку
+                Контролюйте споживання електроенергії, води та газу
               </h2>
             </div>
             <p class="save-bills__text text">Бездротовий розумний будинок - це нова ера в сфері розумних систем,  де комфорт,
@@ -1216,7 +1294,7 @@
     
       </div>
     </section>
-    <section class="have-questions" id="have-questions">
+    <section class="have-questions navigation-section" id="have-questions">
       <div class="have-questions__container container">
     
         <div class="have-questions__wrapper">
@@ -1354,7 +1432,7 @@
           <div class="build-system__title-wrapper section-title-wrapper">
             <h3 class="build-system__subtitle section-subtitle">Побудуйте розумну Автоматизовану систему</h3>
             <h2 class="build-system__title section-title">
-              Бездротовий розумний будинок твоєї мрії
+              Бездротовий <span>розумний</span> <br> будинок твоєї мрії
             </h2>
           </div>
           <p class="build-system__text text">Ми впевнені, що з розумним будинком ваше приміщення стане втіленням мрії
@@ -1573,7 +1651,7 @@
     </div>
     <section class="scenario-modal__backdrop modal__backdrop">
       <div class="scenario-modal modal">
-        <div>
+        <div style="height: 100%">
           <div class="modal__close">
             <img src="../assets/white-cross.svg" alt="Cross">
           </div>
@@ -1584,6 +1662,11 @@
             <div class="scenario-modal__list">
     
             </div>
+    
+            <button class="scenario-modal__button button blue consultation" type="button">
+              <span>Підібрати сценарій</span>
+              <img src="../assets/white-arrow-right.svg" alt="Arrow Icon">
+            </button>
           </div>
         </div>
       </div>

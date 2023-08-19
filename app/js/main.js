@@ -94,12 +94,6 @@ cookieSubmitButton.addEventListener('click', () => {
   cookieMainWrapper.style.display = 'none'
 })
 
-// ======== Setup =========
-
-openModalHandler('.header__showroom', '.showroom-modal__backdrop')
-openModalHandler('.button.consultation', '.consultation-modal__backdrop')
-openModalHandler('.button.scenario', '.scenario-modal__backdrop')
-
 // ======== Success Modal =========
 
 const successModal = document.querySelector('.success-modal__backdrop')
@@ -119,3 +113,19 @@ modalForms.forEach(form => {
     successModal.classList.add('visible')
   })
 })
+
+// ======== Loader =========
+
+const loader = document.querySelector('.loader')
+
+window.onload = () => {
+  setTimeout(() => {
+    loader.classList.add('hidden')
+  }, 500)
+}
+
+// ======== Setup =========
+
+openModalHandler('.header__showroom', '.showroom-modal__backdrop')
+openModalHandler('.button.consultation', '.consultation-modal__backdrop')
+openModalHandler('.button.scenario', '.scenario-modal__backdrop')
