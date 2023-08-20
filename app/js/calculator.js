@@ -488,7 +488,7 @@ const finalStepSetup = () => {
       }
     })
     try {
-      await fetch('https://formspree.io/f/xdoravdr', {
+      await fetch('https://formspree.io/f/mvojazwd', {
         method: 'POST',
         body: formData,
         headers: {
