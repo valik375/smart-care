@@ -43,12 +43,24 @@
 .functions-page__container {
   padding-bottom: 56px;
 
+  .bg-lines__image {
+    top: 45px;
+  }
+
   @media only screen and (min-width: 760px) {
     padding-bottom: 90px;
+
+    .bg-lines__image {
+      top: 90px;
+    }
   }
 
   @media only screen and (min-width: 1160px) {
     padding-bottom: 180px;
+
+    .bg-lines__image {
+      top: 160px;
+    }
   }
 }
 
