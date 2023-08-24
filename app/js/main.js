@@ -120,17 +120,9 @@ modalForms.forEach(form => {
 // ======== Loader =========
 
 const loader = document.querySelector('.loader')
-const loadedSectionImages = document.querySelectorAll('.loaded-section img')
-
-loadedSectionImages.forEach((image, index) => {
-  image.addEventListener('load', function() {
-    if (index === loadedSectionImages.length - 1) {
-      setTimeout(() => {
-        loader.classList.add('hidden')
-      }, 500)
-    }
-  })
-})
+setTimeout(() => {
+  loader.classList.add('hidden')
+}, 1000)
 
 // ======== Setup =========
 
