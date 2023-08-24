@@ -112,17 +112,18 @@
   align-items: center;
   justify-content: space-between;
 
-  @media only screen and (min-width: 760px) {
-
-    .header__nav-button {
-      height: 32px !important;
-    }
+  .header__nav-button {
+    height: 32px !important;
   }
 
   @media only screen and (min-width: 1160px) {
     justify-content: flex-end;
     width: 50%;
     height: 100%;
+
+    .header__nav-button {
+      height: 40px !important;
+    }
   }
 }
 

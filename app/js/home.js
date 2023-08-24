@@ -148,17 +148,15 @@ tabButtons.forEach((button, index) => {
   })
 })
 
-const mobileVideo = document.querySelector('.animation__video video')
-
 document.querySelector('.animation__fullscreen-button').addEventListener('click', () => {
-  if (mobileVideo.requestFullscreen) {
-    mobileVideo.requestFullscreen()
-  } else if (mobileVideo.mozRequestFullScreen) {
-    mobileVideo.mozRequestFullScreen()
-  } else if (mobileVideo.webkitRequestFullscreen) {
-    mobileVideo.webkitRequestFullscreen()
-  } else if (mobileVideo.msRequestFullscreen) {
-    mobileVideo.msRequestFullscreen()
+  if (document.exitFullscreen) {
+    document.exitFullscreen()
+  } else if (document.mozCancelFullScreen) {
+    document.mozCancelFullScreen()
+  } else if (document.webkitExitFullscreen) {
+    document.webkitExitFullscreen()
+  } else if (document.msExitFullscreen) {
+    document.msExitFullscreen()
   }
 })
 

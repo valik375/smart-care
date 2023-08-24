@@ -12,6 +12,13 @@
   }
 }
 
+.products__container {
+
+  @media only screen and (min-width: 1160px) {
+    max-width: 100%;
+  }
+}
+
 .products__info {
   margin-bottom: 32px;
   text-align: center;
@@ -48,6 +55,13 @@
   &.stop .products__companys-wrapper {
     animation-play-state: paused;
   }
+
+  @media only screen and (min-width: 1160px) {
+
+    &:hover .products__companys-wrapper {
+      animation-play-state: paused;
+    }
+  }
 }
 
 .products__companys-wrapper {
@@ -57,7 +71,11 @@
   align-items: center;
   justify-content: space-around;
   gap: 8px;
-  animation: scroll-left 30s linear infinite;
+  animation: scroll-left 45s linear infinite;
+
+  @media only screen and (min-width: 1160px) {
+    min-width: 1160px;
+  }
 }
 
 @keyframes scroll-left {

@@ -92,6 +92,7 @@ cookieSubmitButton.addEventListener('click', () => {
   }
   localStorage.setItem('cookie', JSON.stringify(cookieSettings))
   cookieMainWrapper.style.display = 'none'
+  document.body.style.overflowY = 'auto'
 })
 
 // ======== Success Modal =========
@@ -99,6 +100,7 @@ cookieSubmitButton.addEventListener('click', () => {
 const successModal = document.querySelector('.success-modal__backdrop')
 const modalForms = document.querySelectorAll('.form-modal__form')
 modalForms.forEach(form => {
+  const backdrop = form.parentNode.parentNode.parentNode.parentNode
   form.addEventListener('submit', async (event) => {
     event.preventDefault()
 
@@ -111,18 +113,24 @@ modalForms.forEach(form => {
     })
     event.target.reset()
     successModal.classList.add('visible')
+    backdrop.classList.remove('visible')
   })
 })
 
 // ======== Loader =========
 
 const loader = document.querySelector('.loader')
+const loadedSectionImages = document.querySelectorAll('.loaded-section img')
 
-window.onload = () => {
-  setTimeout(() => {
-    loader.classList.add('hidden')
-  }, 500)
-}
+loadedSectionImages.forEach((image, index) => {
+  image.addEventListener('load', function() {
+    if (index === loadedSectionImages.length - 1) {
+      setTimeout(() => {
+        loader.classList.add('hidden')
+      }, 500)
+    }
+  })
+})
 
 // ======== Setup =========
 

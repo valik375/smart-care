@@ -22,7 +22,7 @@
     pointer-events: all;
 
     .modal {
-      transform: translateY(0);
+      transform: translate(0);
     }
   }
 
@@ -39,8 +39,12 @@
   padding: 16px;
   position: relative;
   overflow: hidden;
-  transform: translateY(50%);
+  transform: translate(0, 50%);
   transition: all .4s ease;
+
+  &.from-right {
+    transform: translate(50%, 0);
+  }
 
   @media only screen and (min-width: 760px) {
     max-width: 560px;
