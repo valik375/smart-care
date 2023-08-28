@@ -3,6 +3,11 @@
 .build-system {
   padding: 48px 0;
   background: $dark-950;
+  overflow: hidden;
+
+  .bg-lines__image {
+    z-index: 1;
+  }
 
   @media only screen and (min-width: 760px) {
     padding: 90px 0;
@@ -10,10 +15,7 @@
 
   @media only screen and (min-width: 1160px) {
     padding: 160px 0;
-
-    .bg-lines__image.desktop {
-      z-index: 1;
-    }
+    overflow: auto;
   }
 }
 
@@ -74,6 +76,8 @@
 }
 
 .build-system__button {
+  position: relative;
+  z-index: 2;
 
   @media only screen and (min-width: 760px) {
     max-width: 260px;

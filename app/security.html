@@ -198,14 +198,14 @@
         </div>
       </div>
     </header>
-    <section class="security-feature loaded-section functions-page">
+    <section class="security-feature functions-page">
     
       <div class="functions-page__container container bg-lines">
         <div class="functions-page__banner">
           <h1 class="functions-page__title">Функції безпеки</h1>
           <p class="functions-page__text text">Ми пропонуємо найширший спектр функцій безпеки та захисту на українському
             ринку. Дізнайтеся детальніше про кожну функцію нижче.</p>
-          <img class="functions-page__image" src="../assets/security-feature-image.png" alt="Image">
+          <img class="functions-page__image image-loaded" src="../assets/security-feature-image.png" alt="Image">
         </div>
     
         <div class="functions-page__feature-list dropdown-list"></div>
@@ -214,6 +214,15 @@
       </div>
     
     </section>
+    <script>
+      const loader = document.querySelector('.loader')
+      const imageLoad = document.querySelector('.image-loaded')
+      imageLoad.addEventListener('load', () => {
+        setTimeout(() => {
+          loader.classList.add('hidden')
+        }, 500)
+      })
+    </script>
     <footer class="footer">
       <div class="footer__container container">
         <div class="footer__content">

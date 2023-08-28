@@ -61,16 +61,22 @@
   <title>Document</title>
 </head>
 <body>
-<main class="main">
-  <div class="loader"><div class="spinner"></div></div>
-  <!--=include header.html -->
-  <!--=include privacy-policy-section.html -->
-  <!--=include footer.html -->
-  <!--=include showroom-modal.html -->
-  <!--=include consultation-modal.html -->
-  <!--=include scenario-modal.html -->
-  <!--=include cookie.html -->
-</main>
+  <main class="main">
+    <div class="loader"><div class="spinner"></div></div>
+    <!--=include header.html -->
+    <!--=include privacy-policy-section.html -->
+    <!--=include footer.html -->
+    <!--=include showroom-modal.html -->
+    <!--=include consultation-modal.html -->
+    <!--=include scenario-modal.html -->
+    <!--=include cookie.html -->
+  </main>
+<script>
+  const loader = document.querySelector('.loader')
+  setTimeout(() => {
+    loader.classList.add('hidden')
+  }, 1000)
+</script>
 <script src="../js/main.min.js"></script>
 </body>
 </html>

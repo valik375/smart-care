@@ -240,7 +240,7 @@
         <span class="fixed-navigation__section-name">Відповіді на питання</span>
       </a>
     </div>
-    <section class="banner loaded-section navigation-section" id="banner">
+    <section class="banner navigation-section" id="banner">
       <div class="banner__container container">
         <div class="banner__wrapper">
     
@@ -258,7 +258,7 @@
     
           <div class="banner__house">
             <div class="banner__house-wrapper card">
-              <img class="banner__house-image" src="../assets/smart-house.png" alt="Smart house example">
+              <img class="banner__house-image image-loaded" src="../assets/smart-house.png" alt="Smart house example">
               <h2 class="banner__house-title">
                 <span>Будь-яке приміщення</span> може стати розумним завдяки нашій системі розумного будинку
               </h2>
@@ -551,6 +551,15 @@
         </div>
       </div>
     </section>
+    <script>
+      const loader = document.querySelector('.loader')
+      const imageLoad = document.querySelector('.image-loaded')
+      imageLoad.addEventListener('load', () => {
+        setTimeout(() => {
+          loader.classList.add('hidden')
+        }, 500)
+      })
+    </script>
     <section class="statistics">
       <img class="statistics__background" src="../assets/statistics-line-bg.png" alt="Background">
       <img class="statistics__background-transparent" src="../assets/statistics-line-bg.png" alt="Background">

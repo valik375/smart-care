@@ -117,13 +117,6 @@ modalForms.forEach(form => {
   })
 })
 
-// ======== Loader =========
-
-const loader = document.querySelector('.loader')
-setTimeout(() => {
-  loader.classList.add('hidden')
-}, 1000)
-
 // ======== Setup =========
 
 openModalHandler('.header__showroom', '.showroom-modal__backdrop')
