@@ -22,13 +22,22 @@ featureDropdownButton.addEventListener('click', () => {
 })
 
 const pauseAnimationOnTouch = (selector) => {
+  let seconds = 0
+  let interval
   selector.addEventListener('touchstart', () => {
-    setTimeout(() => {
-      selector.classList.add('stop')
-    }, 2000)
+    interval = setInterval(() => {
+      if (seconds === 2) {
+        selector.classList.add('stop')
+        seconds = 0
+        return
+      }
+      seconds++
+    }, 1000)
   })
 
   selector.addEventListener('touchend', () => {
+    clearInterval(interval)
+    interval = null
     selector.classList.remove('stop')
   })
 }
@@ -148,15 +157,16 @@ tabButtons.forEach((button, index) => {
   })
 })
 
+const video = document.querySelector('.animation__video video')
 document.querySelector('.animation__fullscreen-button').addEventListener('click', () => {
-  if (document.exitFullscreen) {
-    document.exitFullscreen()
-  } else if (document.mozCancelFullScreen) {
-    document.mozCancelFullScreen()
-  } else if (document.webkitExitFullscreen) {
-    document.webkitExitFullscreen()
-  } else if (document.msExitFullscreen) {
-    document.msExitFullscreen()
+  if (video.requestFullscreen) {
+    video.requestFullscreen()
+  } else if (video.mozRequestFullScreen) {
+    video.mozRequestFullScreen()
+  } else if (video.webkitRequestFullscreen) {
+    video.webkitRequestFullscreen()
+  } else if (video.msRequestFullscreen) {
+    video.msRequestFullscreen()
   }
 })
 

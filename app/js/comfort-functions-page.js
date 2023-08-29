@@ -98,7 +98,7 @@ const comfortFeatureDropdowns = [
       'атмосферу та комфорт у всьому будинку.',
     scenarios: [
       {
-        scenarioTitle: 'Стороння активність на ділянці',
+        scenarioTitle: 'Команда “Тренування”',
         isRedIcon: false,
         tags: [
           {
@@ -116,7 +116,7 @@ const comfortFeatureDropdowns = [
         ]
       },
       {
-        scenarioTitle: 'Спроба втручання в охоронну систему',
+        scenarioTitle: 'Команда “Релакс”',
         isRedIcon: false,
         tags: [
           {
@@ -134,7 +134,7 @@ const comfortFeatureDropdowns = [
         ]
       },
       {
-        scenarioTitle: 'Розбите скло',
+        scenarioTitle: 'Команда “Фільм”',
         isRedIcon: false,
         tags: [
           {
