@@ -598,6 +598,10 @@
 
 .calculator-modal_final-dropdown-item-text {
   font-size: 13px;
+
+  br {
+    display: none;
+  }
 }
 
 .calculator-modal_final-dropdown-item-value {

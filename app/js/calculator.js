@@ -6,28 +6,22 @@ let calculatorSections = [
     variants: [
       {
         text: 'Квартира',
-        label: 'Apartment',
+        label: 'flat',
         icon: '../assets/white-flat.svg',
-        value: false
+        selected: false
       },
       {
         text: 'Приватний будинок',
-        label: 'PrivateHouse',
+        label: 'house',
         icon: '../assets/white-house.svg',
-        value: false
+        selected: false
       },
       {
         text: 'Офіс',
-        label: 'Office',
+        label: 'office',
         icon: '../assets/white-case.svg',
-        value: false
-      },
-      {
-        text: 'Інше',
-        label: 'Other',
-        icon: '../assets/white-three-dots.svg',
-        value: false
-      },
+        selected: false
+      }
     ]
   },
   {
@@ -37,58 +31,83 @@ let calculatorSections = [
     subtext: 'Не знайшли потрібної функції? Вкажіть її при телефонній розмові або переписці з нами та ми обовʼязково додамо її для вас.',
     variants: [
       {
-        text: 'Захист від <br> вторгнення',
-        label: 'ProtectionAgainstIntrusion',
+        text: 'Захист від <br>вторгнення',
+        label: 'protectionAgainstIntrusion',
         icon: '../assets/white-balaclava.svg',
-        value: false
+        price: {
+          flat: 400,
+          house: 400,
+          office: 400
+        },
+        selected: false
       },
       {
-        text: 'Система <br> відеоспостереження',
-        label: 'VideoSurveillanceSystem',
+        text: 'Система <br>відеоспостереження',
+        label: 'videoSurveillanceSystem',
         icon: '../assets/white-camera.svg',
-        value: false
+        price: {
+          flat: 500,
+          house: 500,
+          office: 500
+        },
+        selected: false
       },
       {
-        text: 'Імітація <br> присутності',
-        label: 'ImitationOfPresence',
+        text: 'Імітація <br>присутності',
+        label: 'imitationOfPresence',
         icon: '../assets/white-user.svg',
-        value: false
+        price: {
+          flat: 300,
+          house: 300,
+          office: 300
+        },
+        roomType: ['bedroom'],
+        selected: false
       },
       {
-        text: 'Інтеграція зі <br> службою охорони',
-        label: 'IntegrationWithTheSecurityService',
+        text: 'Інтеграція зі <br>службою охорони',
+        label: 'integrationWithTheSecurityService',
         icon: '../assets/white-shield.svg',
-        value: false
+        price: {
+          flat: 130,
+          house: 130,
+          office: 130
+        },
+        selected: false
       },
       {
         text: 'Розумні замки',
-        label: 'SmartLocks',
+        label: 'smartLocks',
         icon: '../assets/white-lock.svg',
-        value: false
+        price: {
+          flat: 800,
+          house: 800,
+          office: 800
+        },
+        selected: false
       },
       {
-        text: 'Світлова та <br> звукова сирена',
-        label: 'LightAndSoundSiren',
-        icon: '../assets/white-alert.svg',
-        value: false
-      },
-      {
-        text: 'Протипожежна <br> система',
-        label: 'FireProtectionSystem',
+        text: 'Протипожежна <br>система',
+        label: 'fireProtectionSystem',
         icon: '../assets/white-fire.svg',
-        value: false
+        price: {
+          flat: 300,
+          house: 300,
+          office: 300
+        },
+        selected: false
       },
       {
         text: 'Антипотоп система',
-        label: 'AntiFloodSystem',
+        label: 'antiFloodSystem',
         icon: '../assets/white-drop.svg',
-        value: false
-      },
-      {
-        text: 'Захищена Wi-Fi <br> мережа',
-        label: 'SecureWiFiNetwork',
-        icon: '../assets/white-wifi.svg',
-        value: false
+        price: {
+          flat: 175,
+          house: 175,
+          office: 350
+        },
+        roomType: ['kitchen', 'bathroom'],
+        selected: false
       }
     ]
   },
@@ -99,61 +118,87 @@ let calculatorSections = [
     subtext: 'Не знайшли потрібної функції? Вкажіть її при телефонній розмові або переписці з нами та ми обовʼязково додамо її для вас.',
     variants: [
       {
-        text: 'Контроль <br> освітлення',
-        label: 'ControlOfLighting',
+        text: 'Контроль <br>освітлення',
+        label: 'controlOfLighting',
         icon: '../assets/white-light.svg',
-        value: false
+        price: {
+          flat: 600,
+          house: 600,
+          office: 300
+        },
+        roomType: ['kitchen', 'bedroom', 'livingRoom', 'bathroom'],
+        selected: false
       },
       {
         text: 'Клімат-контроль',
-        label: 'ClimateControl',
+        label: 'climateControl',
         icon: '../assets/white-temperature.svg',
-        value: false
+        price: {
+          flat: 500,
+          house: 500,
+          office: 500
+        },
+        selected: false
       },
       {
-        text: 'Автоматичні двері <br> та ролети',
-        label: 'AutomaticDoorsAndRollerShutters',
+        text: 'Автоматичні ролети',
+        label: 'automaticDoorsAndRollerShutters',
         icon: '../assets/white-blinds.svg',
-        value: false
+        price: {
+          flat: 500,
+          house: 500,
+          office: 500
+        },
+        roomType: ['bathroom'],
+        selected: false
       },
       {
-        text: 'Автоматизація <br> ветниляції',
-        label: 'AutomationOVetting',
+        text: 'Автоматизація <br>ветниляції',
+        label: 'automationOVetting',
         icon: '../assets/white-wentilation.svg',
-        value: false
+        price: {
+          flat: 140,
+          house: 140,
+          office: 140
+        },
+        roomType: ['kitchen', 'bathroom'],
+        selected: false
       },
       {
-        text: 'Керування системами <br> опалення',
-        label: 'ManagementOfHeatingSystems',
+        text: 'Керування системами <br>опалення',
+        label: 'managementOfHeatingSystems',
         icon: '../assets/white-heating.svg',
-        value: false
+        price: {
+          flat: 150,
+          house: 150,
+          office: 150
+        },
+        roomType: ['bedroom', 'livingRoom'],
+        selected: false
       },
       {
-        text: 'Голосовий <br> ассистент',
-        label: 'VoiceAssistant',
+        text: 'Голосовий <br>ассистент',
+        label: 'voiceAssistant',
         icon: '../assets/white-micro.svg',
-        value: false
+        price: {
+          flat: 200,
+          house: 200,
+          office: 200
+        },
+        selected: false
       },
       {
-        text: 'Розумний <br> прибиральник',
-        label: 'SmartCleaner',
+        text: 'Розумний <br>прибиральник',
+        label: 'smartCleaner',
         icon: '../assets/white-robot.svg',
-        value: false
-      },
-      {
-        text: 'Економія <br> комунальних витрат',
-        label: 'SavingUtilityCosts',
-        icon: '../assets/white-dollar.svg',
-        value: false
+        price: {
+          flat: 50,
+          house: 50,
+          office: 50
+        },
+        selected: false
       }
     ]
-  },
-  {
-    sectionType: 'range',
-    title: 'Яка площина <span>вашого</span> приміщення?',
-    text: 'Від площини приміщення залежить кількість та тип пристроїв системи розумного будинку.',
-    rangeValue: 40,
-    label: 'SizeOfFlat'
   },
   {
     sectionType: 'rooms',
@@ -163,74 +208,78 @@ let calculatorSections = [
       {
         id: 0,
         name: 'Кухня',
-        label: 'Kitchen',
+        label: 'kitchen',
         value: 1
       },
       {
         id: 1,
         name: 'Санвузол',
-        label: 'Bathroom',
+        label: 'bathroom',
         value: 1
       },
       {
         id: 2,
         name: 'Вітальня/коридор/лоджія',
-        label: 'LivingRoom_Corridor_Loggia',
+        label: 'livingRoom',
         value: 1
       },
       {
         id: 3,
         name: 'Спальня',
-        label: 'Bedroom',
+        label: 'bedroom',
         value: 1
       },
       {
         id: 4,
         name: 'Нежилі, технічні <br> приміщення тощо',
-        label: 'NonResidential_TechnicalPremises_Etc',
+        label: 'etc',
         value: 1
       },
     ]
+  },
+  {
+    sectionType: 'range',
+    title: 'Яка площина <span>вашого</span> приміщення?',
+    text: 'Від площини приміщення залежить кількість та тип пристроїв системи розумного будинку.',
+    rangeValue: 40,
+    label: 'SizeOfFlat'
   }
 ]
 let currentStep = 0
 let currentTemplate
-
-const calculatorModalBackdrop = document.querySelector('.calculator-modal__backdrop')
-document.querySelector('.functions-page__button.calculator').addEventListener('click', () => {
-  calculatorModalBackdrop.classList.toggle('visible')
-})
-document.querySelector('.calculator-modal__close').addEventListener('click', () => {
-  calculatorModalBackdrop.classList.toggle('visible')
-})
-
+let selectedSpace
+let selectedFunctions
+let totalPrice = 0
+let securityFunctions = 0
+let comfortFunctions = 0
+let securityFunctionsText = []
+let comfortFunctionsText = []
 
 const calculatorModalBody = document.querySelector('.calculator-modal__body')
-const nextButton = document.querySelector('.calculator-modal__next')
 const prevButton = document.querySelector('.calculator-modal__back')
+const nextButton = document.querySelector('.calculator-modal__next')
+const calculatorModalBackdrop = document.querySelector('.calculator-modal__backdrop')
 
 // -------- CHOOSE ----------
 
-const chooseVariant = (event, index) => {
-  if (currentStep === 0) {
-    chooseFlatHandler(event, index)
-  } else {
-    chooseHandler(event, index)
-  }
-}
 const chooseFlatHandler = (event, index) => {
   const variantSelect = document.querySelectorAll('.calculator-modal__template-choose-item')
   variantSelect.forEach((variant, variantIndex) => {
     variantIndex === index ? variant.classList.add('selected') : variant.classList.remove('selected')
   })
   currentTemplate.variants.map((variant, variantIndex) => {
-    variant.value = variantIndex === index
+    variant.selected = variantIndex === index
   })
 }
 const chooseHandler = (event, index) => {
   const variantSelect = document.querySelectorAll('.calculator-modal__template-choose-item')[index]
   variantSelect.classList.toggle('selected')
-  currentTemplate.variants[index].value = !currentTemplate.variants[index].value
+  currentTemplate.variants[index].selected = !currentTemplate.variants[index].selected
+}
+const chooseVariant = (event, index) => {
+  currentStep === 0
+    ? chooseFlatHandler(event, index)
+    : chooseHandler(event, index)
 }
 const chooseTemplate = (item) => {
   return `
@@ -239,16 +288,52 @@ const chooseTemplate = (item) => {
       <p class="calculator-modal__template-text text">${ item.text }</p>
       <div class="calculator-modal__template-choose">
       ${ item.variants.map((variant, variantIndex) => {
-        return `
-          <div onclick="chooseVariant(event, ${variantIndex})" class="calculator-modal__template-choose-item ${ variant.value ? 'selected' : '' }">
+    return `
+          <div onclick="chooseVariant(event, ${variantIndex})" class="calculator-modal__template-choose-item ${ variant.selected ? 'selected' : '' }">
             <img src="${ variant.icon }" alt="${ variant.text }">
             <span>${ variant.text }</span>
           </div>
         `
-      }).join('') }
+  }).join('') }
       </div>
       ${ item.subtext ? `<div class="calculator-modal__template-choose-subtext text">${ item.subtext }</div>` : '' }
-      
+
+    </div>
+  `
+}
+
+// -------- ROOMS ----------
+
+const decrementRoom = (event, roomIndex) => {
+  if (currentTemplate.rooms[roomIndex].value <= 0) {
+    return
+  }
+  currentTemplate.rooms[roomIndex].value -= 1
+  event.target.nextElementSibling.innerHTML = currentTemplate.rooms[roomIndex].value
+}
+const incrementRoom = (event, roomIndex) => {
+  currentTemplate.rooms[roomIndex].value += 1
+  event.target.previousElementSibling.innerHTML = currentTemplate.rooms[roomIndex].value
+}
+const roomsTemplate = (item) => {
+  return `
+    <div class="calculator-modal__template rooms">
+      <h2 class="calculator-modal__template-title">${ item.title }</h2>
+      <p class="calculator-modal__template-text text">${ item.text }</p>
+      <div class="calculator-modal__template-rooms">
+        ${ item.rooms.map((room, index) => {
+    return `
+            <div class="calculator-modal__template-room">
+              <div class="calculator-modal__template-room__name">${ room.name }</div>
+              <div class="calculator-modal__template-counter">
+                <button onclick="decrementRoom(event, ${ index })" class="calculator-modal__template-minus" type="button">-</button>
+                <div class="calculator-modal__template-room-value">${ room.value }</div>
+                <button onclick="incrementRoom(event, ${ index })" class="calculator-modal__template-plus" type="button">+</button>
+              </div>
+            </div>
+          `
+  }).join('') }
+      </div>
     </div>
   `
 }
@@ -277,7 +362,7 @@ const rangeTemplate = (item) => {
             class="calculator-modal__range-value input"
             value="${ item.rangeValue }"
             pattern="[0-9]+"
-            max="400"
+            max="200"
             onchange="changeInputRange(event)"
           >
           <span class="calculator-modal__label">m²</span>
@@ -287,7 +372,7 @@ const rangeTemplate = (item) => {
             type="range" 
             value="${ item.rangeValue }"
             min="10" 
-            max="400" 
+            max="200" 
             onchange="changeRange(event)"
           >
           <div class="calculator-modal__range-splitter left"></div>
@@ -297,8 +382,6 @@ const rangeTemplate = (item) => {
             <div class="calculator-modal__range-value">10</div>
             <div class="calculator-modal__range-value">100</div>
             <div class="calculator-modal__range-value">200</div>
-            <div class="calculator-modal__range-value">300</div>
-            <div class="calculator-modal__range-value">400+</div>
           </div>
         </div>
       </div>
@@ -306,52 +389,66 @@ const rangeTemplate = (item) => {
   `
 }
 
-// -------- ROOMS ----------
-
-const decrementRoom = (event, roomIndex) => {
-  if (currentTemplate.rooms[roomIndex].value <= 0) {
-    return
-  }
-  currentTemplate.rooms[roomIndex].value -= 1
-  event.target.nextElementSibling.innerHTML = currentTemplate.rooms[roomIndex].value
-}
-const incrementRoom = (event, roomIndex) => {
-  currentTemplate.rooms[roomIndex].value += 1
-  event.target.previousElementSibling.innerHTML = currentTemplate.rooms[roomIndex].value
-}
-const roomsTemplate = (item) => {
-  return `
-    <div class="calculator-modal__template rooms">
-      <h2 class="calculator-modal__template-title">${ item.title }</h2>
-      <p class="calculator-modal__template-text text">${ item.text }</p>
-      <div class="calculator-modal__template-rooms">
-        ${ item.rooms.map((room, index) => {
-          return `
-            <div class="calculator-modal__template-room">
-              <div class="calculator-modal__template-room__name">${ room.name }</div>
-              <div class="calculator-modal__template-counter">
-                <button onclick="decrementRoom(event, ${ index })" class="calculator-modal__template-minus" type="button">-</button>
-                <div class="calculator-modal__template-room-value">${ room.value }</div>
-                <button onclick="incrementRoom(event, ${ index })" class="calculator-modal__template-plus" type="button">+</button>
-              </div>
-            </div>
-          `
-        }).join('') }
-      </div>
-    </div>
-  `
-}
-
 // -------- FORM ----------
 
+const setFunctions = (index, price, quantity, text) => {
+  if (index === 0) {
+    securityFunctions += price
+    securityFunctionsText.push(`${text} ${quantity}шт.`)
+  } else {
+    comfortFunctions += price
+    comfortFunctionsText.push(`${text} ${quantity}шт.`)
+  }
+}
+const calculate = () => {
+  selectedSpace = calculatorSections[0].variants.find(spot => spot.selected)
+  const selectedSpaceType = selectedSpace.label
+  const selectedRooms = calculatorSections[3].rooms
+  const flatSquare = calculatorSections[4].rangeValue
+  selectedFunctions = [calculatorSections[1], calculatorSections[2]].map((section, index) => {
+    return section.variants.map(variant => {
+      if (variant.selected) {
+        if (variant.roomType?.length) {
+          const rooms = selectedRooms.filter(room => variant.roomType.includes(room.label))
+          let quantity = 0
+          rooms.forEach(room => {
+            quantity += room.value
+          })
+          quantity = quantity !== 0 ? quantity : 1
+          let price = quantity * variant.price[selectedSpaceType]
+          setFunctions(index, price, quantity, variant.text)
+          return {
+            text: variant.text.replace(/\<br\>/g, ''),
+            label: variant.label,
+            quantity,
+            price
+          }
+        }
+        let price = (selectedSpaceType === 'office' && flatSquare >= 100 && variant.label === 'voiceAssistant')
+          ? variant.price[selectedSpaceType] * 2
+          : variant.price[selectedSpaceType]
+        setFunctions(index, price, 1, variant.text)
+        return {
+          text: variant.text.replace(/\<br\>/g, ' '),
+          label: variant.label,
+          quantity: 1,
+          price: price
+        }
+      }
+      return null
+    }).filter(item => item !== null)
+  })
+  totalPrice = 700 + securityFunctions + comfortFunctions
+}
 const formTemplate = () => {
+  calculate()
   return `
    <div class="calculator-modal_final">
       <div class="calculator-modal_final-title">Готово! Орієнтована вартість вашого розумного будинку:</div>
       <div class="calculator-modal_final-dropdown">
         <div class="calculator-modal_final-dropdown-header">
           <div class="calculator-modal_final-dropdown-left">
-            <div class="calculator-modal_final-dropdown-title">~ $1970</div>
+            <div class="calculator-modal_final-dropdown-title total">~ $${totalPrice}</div>
             <div class="calculator-modal_final-dropdown-icon">
               <img src="../assets/gray-information.svg" alt="Icon">
               <div class="calculator-modal_final-info">
@@ -382,18 +479,16 @@ const formTemplate = () => {
           <div class="calculator-modal_final-dropdown-item">
             <div class="calculator-modal_final-dropdown-item-wrapper">
               <div class="calculator-modal_final-dropdown-item-title">Безпека та захист</div>
-              <div class="calculator-modal_final-dropdown-item-text text">Датчик розбиття скла 3 шт, датчик руху 3 шт, датчик відчинення
-                1 шт, звукова сирена 1 шт, тривожна кнопка 1шт, датчики вогню 2 шт, датчики води 2 шт.</div>
+              <div class="calculator-modal_final-dropdown-item-text text">${securityFunctionsText.map(text => text).join(' ')}</div>
             </div>
-            <div class="calculator-modal_final-dropdown-item-value">$650</div>
+            <div class="calculator-modal_final-dropdown-item-value">$${securityFunctions}</div>
           </div>
           <div class="calculator-modal_final-dropdown-item">
             <div class="calculator-modal_final-dropdown-item-wrapper">
               <div class="calculator-modal_final-dropdown-item-title">Комфорт та продуктивність</div>
-              <div class="calculator-modal_final-dropdown-item-text text">Електронне реле освітлення 4 шт, датчик освітленості 4 шт,
-                електронні ролети 1 шт, електронний термостат 2 шт.</div>
+              <div class="calculator-modal_final-dropdown-item-text text">${comfortFunctionsText.map(text => text).join(' ,')}</div>
             </div>
-            <div class="calculator-modal_final-dropdown-item-value">$800</div>
+            <div class="calculator-modal_final-dropdown-item-value">$${comfortFunctions}</div>
           </div>
           <div class="calculator-modal_final-dropdown-item">
             <div class="calculator-modal_final-dropdown-item-wrapper">
@@ -426,7 +521,7 @@ const formTemplate = () => {
           <label for="name" class="label">Імʼя*</label>
           <input
             id="name"
-            name="name"
+            name="Iмʼя"
             type="text"
             class="input"
             placeholder="Введіть ваше імʼя"
@@ -438,10 +533,11 @@ const formTemplate = () => {
           <input
             class="input"
             id="phone"
-            name="phone"
+            name="Телефон"
             value="+380"
             placeholder="+380XXXXXXXXX"
             type="tel"
+            maxlength="13"
             pattern="^\\+380[0-9]{9}$"
             title="Введіть данні в форматі +380XXXXXXXXX"
             required
@@ -452,7 +548,7 @@ const formTemplate = () => {
           <input
             class="input"
             id="email"
-            name="email"
+            name="Email"
             type="email"
             placeholder="Введіть ваш email"
           >
@@ -462,7 +558,6 @@ const formTemplate = () => {
     </div>
   `
 }
-
 const finalStepSetup = () => {
   calculatorModalBody.innerHTML = formTemplate()
   document.querySelector('.calculator-modal__card').classList.add('final-step')
@@ -472,20 +567,19 @@ const finalStepSetup = () => {
   document.querySelector('.calculator-modal_final-form').addEventListener('submit', async (event) => {
     event.preventDefault()
     const formData = new FormData(event.target)
-    calculatorSections.map(data => {
-      if (data.sectionType === 'choose') {
-        return data.variants.map(variant => {
-          formData.append(variant.label, variant.value)
-        })
-      }
-      if (data.sectionType === 'range') {
-        return formData.append(data.label, data.rangeValue)
-      }
-      if (data.sectionType === 'rooms') {
-        return data.rooms.map(room => {
-          formData.append(room.label, room.value)
-        })
-      }
+    const calculatorFunctions = [...selectedFunctions[0], ...selectedFunctions[1]]
+    const rooms = calculatorSections[3].rooms
+    formData.append('Тип приміщення:', selectedSpace.text)
+    formData.append('Приблизна вартiсть:', totalPrice)
+    formData.append('Функції безпеки вартiсть:', securityFunctions)
+    formData.append('Функції комфорту вартiсть:', comfortFunctions)
+    formData.append('Функції', ' ')
+    calculatorFunctions.map(item => {
+      formData.append(item.text, item.quantity)
+    })
+    formData.append('Кімнати', ' ')
+    rooms.map(room => {
+      formData.append(room.name.replace(/\<br\>/g, ''), room.value)
     })
     try {
       await fetch('https://formspree.io/f/mvojazwd', {
@@ -512,7 +606,6 @@ const renderStep = () => {
     return
   }
 
-
   switch (currentTemplate.sectionType) {
     case 'choose':
       template = chooseTemplate(currentTemplate)
@@ -529,8 +622,10 @@ const renderStep = () => {
   calculatorModalBody.innerHTML = template
 }
 
+// -------- NavButtons ----------
+
 nextButton.addEventListener('click', () => {
-  if (currentTemplate.sectionType === 'choose' && !currentTemplate.variants.find(item => item.value === true)) {
+  if (currentTemplate.sectionType === 'choose' && !currentTemplate.variants.find(item => item.selected === true)) {
     return
   }
   calculatorSections[currentStep] = currentTemplate
@@ -538,11 +633,19 @@ nextButton.addEventListener('click', () => {
   currentStep < 5 ? document.querySelector(`.calculator-modal__step.step_${currentStep + 1}`).classList.add('active') : ''
   renderStep()
 })
-
 prevButton.addEventListener('click', () => {
   currentStep < 5 ? document.querySelector(`.calculator-modal__step.step_${currentStep + 1}`).classList.remove('active') : ''
   currentStep--
   renderStep()
+})
+
+// -------- Open/Close Modal ----------
+
+document.querySelector('.functions-page__button.calculator').addEventListener('click', () => {
+  calculatorModalBackdrop.classList.toggle('visible')
+})
+document.querySelector('.calculator-modal__close').addEventListener('click', () => {
+  calculatorModalBackdrop.classList.toggle('visible')
 })
 
 renderStep()
