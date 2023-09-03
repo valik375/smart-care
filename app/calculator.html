@@ -68,7 +68,7 @@
   <meta property="og:title" content="Smart Care | Розрахувати вартість">
   <meta property="og:description" content="Бездротовий розумний будинок твоєї мрії">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="../assets/min-blue-logo.svg">
+  <meta property="og:image" content="/assets/opengraph-image.png">
   <meta property="og:image:width" content="500">
   <meta property="og:image:height" content="250">
   <meta property="og:site_name" content="Smart Care">
@@ -232,13 +232,19 @@
     </div>
   </section>
   <script>
-    const loader = document.querySelector('.loader')
-    const imageLoad = document.querySelector('.image-loaded')
-    imageLoad.addEventListener('load', () => {
+    try {
+      const loader = document.querySelector('.loader')
+      const imageLoad = document.querySelector('.image-loaded')
+      imageLoad.addEventListener('load', () => {
+        setTimeout(() => {
+          loader.classList.add('hidden')
+        }, 500)
+      })
+    } catch (e) {
       setTimeout(() => {
         loader.classList.add('hidden')
       }, 500)
-    })
+    }
   </script>
   <div class="confirm-modal__backdrop modal__backdrop">
   

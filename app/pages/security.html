@@ -74,6 +74,7 @@
     <!--=include header.html -->
     <!--=include security-feature-section.html -->
     <script>
+    try {
       const loader = document.querySelector('.loader')
       const imageLoad = document.querySelector('.image-loaded')
       imageLoad.addEventListener('load', () => {
@@ -81,7 +82,12 @@
           loader.classList.add('hidden')
         }, 500)
       })
-    </script>
+    } catch (e) {
+      setTimeout(() => {
+        loader.classList.add('hidden')
+      }, 500)
+    }
+  </script>
     <!--=include footer.html -->
     <!--=include showroom-modal.html -->
     <!--=include consultation-modal.html -->
