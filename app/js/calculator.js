@@ -262,7 +262,7 @@ const calculatorModalBackdrop = document.querySelector('.calculator-modal__backd
 
 // -------- CHOOSE ----------
 
-const chooseFlatHandler = (event, index) => {
+const chooseFlatHandler = (index) => {
   const variantSelect = document.querySelectorAll('.calculator-modal__template-choose-item')
   variantSelect.forEach((variant, variantIndex) => {
     variantIndex === index ? variant.classList.add('selected') : variant.classList.remove('selected')
@@ -271,15 +271,15 @@ const chooseFlatHandler = (event, index) => {
     variant.selected = variantIndex === index
   })
 }
-const chooseHandler = (event, index) => {
+const chooseHandler = (index) => {
   const variantSelect = document.querySelectorAll('.calculator-modal__template-choose-item')[index]
   variantSelect.classList.toggle('selected')
   currentTemplate.variants[index].selected = !currentTemplate.variants[index].selected
 }
-const chooseVariant = (event, index) => {
+const chooseVariant = (index) => {
   currentStep === 0
-    ? chooseFlatHandler(event, index)
-    : chooseHandler(event, index)
+    ? chooseFlatHandler(index)
+    : chooseHandler(index)
 }
 const chooseTemplate = (item) => {
   return `
@@ -289,7 +289,7 @@ const chooseTemplate = (item) => {
       <div class="calculator-modal__template-choose">
       ${ item.variants.map((variant, variantIndex) => {
     return `
-          <div onclick="chooseVariant(event, ${variantIndex})" class="calculator-modal__template-choose-item ${ variant.selected ? 'selected' : '' }">
+          <div onclick="chooseVariant(${variantIndex})" class="calculator-modal__template-choose-item ${ variant.selected ? 'selected' : '' }">
             <img src="${ variant.icon }" alt="${ variant.text }">
             <span>${ variant.text }</span>
           </div>
@@ -322,7 +322,7 @@ const roomsTemplate = (item) => {
       <p class="calculator-modal__template-text text">${ item.text }</p>
       <div class="calculator-modal__template-rooms">
         ${ item.rooms.map((room, index) => {
-    return `
+          return `
             <div class="calculator-modal__template-room">
               <div class="calculator-modal__template-room__name">${ room.name }</div>
               <div class="calculator-modal__template-counter">
@@ -391,6 +391,9 @@ const rangeTemplate = (item) => {
 
 // -------- FORM ----------
 
+const removeBrFromText = (text) => {
+  return text.replace(/\<br\>/g, '')
+}
 const setFunctions = (index, price, quantity, text) => {
   if (index === 0) {
     securityFunctions += price
@@ -418,7 +421,7 @@ const calculate = () => {
           let price = quantity * variant.price[selectedSpaceType]
           setFunctions(index, price, quantity, variant.text)
           return {
-            text: variant.text.replace(/\<br\>/g, ''),
+            text: removeBrFromText(variant.text),
             label: variant.label,
             quantity,
             price
@@ -429,7 +432,7 @@ const calculate = () => {
           : variant.price[selectedSpaceType]
         setFunctions(index, price, 1, variant.text)
         return {
-          text: variant.text.replace(/\<br\>/g, ' '),
+          text: removeBrFromText(variant.text),
           label: variant.label,
           quantity: 1,
           price: price
@@ -579,7 +582,7 @@ const finalStepSetup = () => {
     })
     formData.append('Кімнати', ' ')
     rooms.map(room => {
-      formData.append(room.name.replace(/\<br\>/g, ''), room.value)
+      formData.append(removeBrFromText(room.name), room.value)
     })
     try {
       await fetch('https://formspree.io/f/mvojazwd', {
@@ -643,9 +646,11 @@ prevButton.addEventListener('click', () => {
 
 document.querySelector('.functions-page__button.calculator').addEventListener('click', () => {
   calculatorModalBackdrop.classList.toggle('visible')
+  document.body.classList.toggle('overflow-hidden')
 })
 document.querySelector('.calculator-modal__close').addEventListener('click', () => {
   calculatorModalBackdrop.classList.toggle('visible')
+  document.body.classList.toggle('overflow-hidden')
 })
 
 renderStep()

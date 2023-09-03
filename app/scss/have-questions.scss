@@ -1,7 +1,12 @@
 @import './vars';
 
 .have-questions {
+  background: $dark-950;
+}
+
+.have-questions__bordered {
   padding: 48px 0;
+  background: $dark-900;
 
   @media only screen and (min-width: 760px) {
     padding: 90px 0;

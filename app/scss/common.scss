@@ -20,6 +20,28 @@
 body {
   background: $dark-900;
   overflow-x: hidden;
+
+  &.overflow-hidden {
+    overflow: hidden;
+  }
+}
+
+.bordered-top-section {
+  border-radius: 20px 20px 0 0;
+  background: $dark-900;
+
+  @media only screen and (min-width: 1160px) {
+    border-radius: 40px 40px 0 0;
+  }
+}
+
+.bordered-bottom-section {
+  border-radius:  0 0 20px 20px;
+  background: $dark-900;
+
+  @media only screen and (min-width: 1160px) {
+    border-radius: 0 0 40px 40px;
+  }
 }
 
 .main {

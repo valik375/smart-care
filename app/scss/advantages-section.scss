@@ -1,7 +1,12 @@
 @import './vars';
 
 .advantages {
+  background: $dark-950;
+}
+
+.advantages__wrapper {
   padding-top: 48px;
+  background: $dark-900;
 
   @media only screen and (min-width: 760px) {
     padding-top: 90px;

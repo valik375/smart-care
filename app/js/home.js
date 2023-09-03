@@ -26,7 +26,7 @@ const pauseAnimationOnTouch = (selector) => {
   let interval
   selector.addEventListener('touchstart', () => {
     interval = setInterval(() => {
-      if (seconds === 2) {
+      if (seconds === 1) {
         selector.classList.add('stop')
         seconds = 0
         return
@@ -160,13 +160,47 @@ tabButtons.forEach((button, index) => {
 const video = document.querySelector('.animation__video video')
 document.querySelector('.animation__fullscreen-button').addEventListener('click', () => {
   if (video.requestFullscreen) {
-    video.requestFullscreen()
+    if (!document.fullscreenElement) {
+      video.requestFullscreen()
+      video.style.pointerEvents = 'all'
+    } else {
+      document.exitFullscreen()
+      video.style.pointerEvents = 'none'
+    }
   } else if (video.mozRequestFullScreen) {
-    video.mozRequestFullScreen()
+    if (!document.mozFullScreenElement) {
+      video.mozRequestFullScreen()
+      video.style.pointerEvents = 'all'
+    } else {
+      document.mozCancelFullScreen()
+      video.style.pointerEvents = 'none'
+    }
   } else if (video.webkitRequestFullscreen) {
-    video.webkitRequestFullscreen()
-  } else if (video.msRequestFullscreen) {
-    video.msRequestFullscreen()
+    if (!document.webkitFullscreenElement) {
+      video.webkitRequestFullscreen()
+      video.style.pointerEvents = 'all'
+    } else {
+      document.webkitExitFullscreen()
+      video.style.pointerEvents = 'none'
+    }
+  } else if (video.webkitDisplayingFullscreen) {
+    if (!video.webkitDisplayingFullscreen) {
+      video.webkitEnterFullscreen()
+      video.style.pointerEvents = 'all'
+    } else {
+      video.webkitExitFullscreen()
+      video.style.pointerEvents = 'none'
+    }
+  } else if (video.webkitEnterFullScreen) {
+    if (!video.webkitDisplayingFullscreen) {
+      video.webkitEnterFullScreen()
+      video.style.pointerEvents = 'all'
+    } else {
+      video.webkitExitFullScreen()
+      video.style.pointerEvents = 'none'
+    }
+  } else {
+    video.style.pointerEvents = 'none'
   }
 })
 
