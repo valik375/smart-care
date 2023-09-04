@@ -75,19 +75,10 @@
     <!--=include fixed-navigation.html -->
     <!--=include banner.html -->
     <script>
-      try {
-        const loader = document.querySelector('.loader')
-        const imageLoad = document.querySelector('.image-loaded')
-        imageLoad.addEventListener('load', () => {
-          setTimeout(() => {
-            loader.classList.add('hidden')
-          }, 500)
-        })
-      } catch (e) {
-        setTimeout(() => {
-          loader.classList.add('hidden')
-        }, 500)
-      }
+      const loader = document.querySelector('.loader')
+      setTimeout(() => {
+        loader.classList.add('hidden')
+      }, 1000)
     </script>
     <!--=include statistics-section.html -->
     <!--=include service.html -->
