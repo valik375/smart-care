@@ -122,11 +122,11 @@ let calculatorSections = [
         label: 'controlOfLighting',
         icon: '../assets/white-light.svg',
         price: {
-          flat: 600,
-          house: 600,
-          office: 300
+          flat: 150,
+          house: 150,
+          office: 75
         },
-        roomType: ['kitchen', 'bedroom', 'livingRoom', 'bathroom'],
+        roomType: ['kitchen', 'bedroom', 'bathroom'],
         selected: false
       },
       {
@@ -157,9 +157,9 @@ let calculatorSections = [
         label: 'automationOVetting',
         icon: '../assets/white-wentilation.svg',
         price: {
-          flat: 140,
-          house: 140,
-          office: 140
+          flat: 70,
+          house: 70,
+          office: 70
         },
         roomType: ['kitchen', 'bathroom'],
         selected: false
@@ -169,9 +169,9 @@ let calculatorSections = [
         label: 'managementOfHeatingSystems',
         icon: '../assets/white-heating.svg',
         price: {
-          flat: 150,
-          house: 150,
-          office: 150
+          flat: 75,
+          house: 75,
+          office: 75
         },
         roomType: ['bedroom', 'livingRoom'],
         selected: false
@@ -419,6 +419,9 @@ const calculate = () => {
           })
           quantity = quantity !== 0 ? quantity : 1
           let price = quantity * variant.price[selectedSpaceType]
+          if (flatSquare >= 80 && variant.label === 'controlOfLighting') {
+            price += 300
+          }
           setFunctions(index, price, quantity, variant.text)
           return {
             text: removeBrFromText(variant.text),
@@ -427,15 +430,16 @@ const calculate = () => {
             price
           }
         }
-        let price = (selectedSpaceType === 'office' && flatSquare >= 100 && variant.label === 'voiceAssistant')
-          ? variant.price[selectedSpaceType] * 2
-          : variant.price[selectedSpaceType]
+        let price = variant.price[selectedSpaceType]
+        if (selectedSpaceType === 'office' && flatSquare >= 100 && variant.label === 'voiceAssistant') {
+          price = price * 2
+        }
         setFunctions(index, price, 1, variant.text)
         return {
           text: removeBrFromText(variant.text),
           label: variant.label,
           quantity: 1,
-          price: price
+          price
         }
       }
       return null
@@ -573,9 +577,9 @@ const finalStepSetup = () => {
     const calculatorFunctions = [...selectedFunctions[0], ...selectedFunctions[1]]
     const rooms = calculatorSections[3].rooms
     formData.append('Тип приміщення:', selectedSpace.text)
-    formData.append('Приблизна вартiсть:', totalPrice)
-    formData.append('Функції безпеки вартiсть:', securityFunctions)
-    formData.append('Функції комфорту вартiсть:', comfortFunctions)
+    formData.append('Приблизна вартiсть:', `$${totalPrice}`)
+    formData.append('Функції безпеки вартiсть:', `$${securityFunctions}`)
+    formData.append('Функції комфорту вартiсть:', `$${comfortFunctions}`)
     formData.append('Функції', ' ')
     calculatorFunctions.map(item => {
       formData.append(item.text, item.quantity)
