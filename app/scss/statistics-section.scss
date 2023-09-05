@@ -43,7 +43,7 @@
   height: 100%;
   overflow: hidden;
 
-  &.stop .statistics__wrapper {
+  &:hover .statistics__wrapper {
     animation-play-state: paused;
   }
 }

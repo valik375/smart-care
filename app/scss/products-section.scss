@@ -52,7 +52,7 @@
   display: flex;
   gap: 8px;
 
-  &.stop .products__companys-wrapper {
+  &:hover .products__companys-wrapper {
     animation-play-state: paused;
   }
 

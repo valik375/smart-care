@@ -21,34 +21,6 @@ featureDropdownButton.addEventListener('click', () => {
   }
 })
 
-const pauseAnimationOnTouch = (selector) => {
-  let seconds = 0
-  let interval
-  selector.addEventListener('touchstart', () => {
-    interval = setInterval(() => {
-      if (seconds === 1) {
-        selector.classList.add('stop')
-        seconds = 0
-        return
-      }
-      seconds++
-    }, 1000)
-  })
-
-  selector.addEventListener('touchend', () => {
-    clearInterval(interval)
-    interval = null
-    selector.classList.remove('stop')
-  })
-}
-
-const statisticsContainer = document.querySelectorAll('.statistics__container')
-statisticsContainer.forEach(statistic => {
-  pauseAnimationOnTouch(statistic)
-})
-const productsCompanys = document.querySelector('.products__companys')
-pauseAnimationOnTouch(productsCompanys)
-
 const featuresExampleButton = document.querySelectorAll('.features__item-example-play')
 const movieUrls = {
   0: '../assets/house-fire-scenario.gif',
@@ -146,7 +118,7 @@ tabButtons.forEach((button, index) => {
       tabsWrapper.classList.remove('active-left')
       tabsWrapper.classList.add('active-right')
       controlImage.classList.add('gif')
-      controlImage.children[0].src = '../assets/voice-controller.gif'
+      controlImage.children[0].src = '../assets/voice-controller.png'
     }
     opportunityItems.forEach((opportunity, opportunityIndex) => {
       const title = opportunity.children[0]
@@ -159,48 +131,31 @@ tabButtons.forEach((button, index) => {
 
 const video = document.querySelector('.animation__video video')
 document.querySelector('.animation__fullscreen-button').addEventListener('click', () => {
-  if (video.requestFullscreen) {
-    if (!document.fullscreenElement) {
-      video.requestFullscreen()
-      video.style.pointerEvents = 'all'
-    } else {
-      document.exitFullscreen()
-      video.style.pointerEvents = 'none'
-    }
-  } else if (video.mozRequestFullScreen) {
-    if (!document.mozFullScreenElement) {
-      video.mozRequestFullScreen()
-      video.style.pointerEvents = 'all'
-    } else {
-      document.mozCancelFullScreen()
-      video.style.pointerEvents = 'none'
-    }
-  } else if (video.webkitRequestFullscreen) {
-    if (!document.webkitFullscreenElement) {
-      video.webkitRequestFullscreen()
-      video.style.pointerEvents = 'all'
-    } else {
-      document.webkitExitFullscreen()
-      video.style.pointerEvents = 'none'
-    }
-  } else if (video.webkitDisplayingFullscreen) {
-    if (!video.webkitDisplayingFullscreen) {
-      video.webkitEnterFullscreen()
-      video.style.pointerEvents = 'all'
-    } else {
-      video.webkitExitFullscreen()
-      video.style.pointerEvents = 'none'
-    }
-  } else if (video.webkitEnterFullScreen) {
-    if (!video.webkitDisplayingFullscreen) {
-      video.webkitEnterFullScreen()
-      video.style.pointerEvents = 'all'
-    } else {
-      video.webkitExitFullScreen()
-      video.style.pointerEvents = 'none'
-    }
-  } else {
+  const videoStart = () => {
+    video.style.pointerEvents = 'all'
+    video.play()
+  }
+  const videoEnd = () => {
     video.style.pointerEvents = 'none'
+    video.pause()
+  }
+  if (video.requestFullscreen && !document.fullscreenElement) {
+    video.requestFullscreen()
+    videoStart()
+  } else if (video.mozRequestFullScreen && !document.mozFullScreenElement) {
+    video.mozRequestFullScreen()
+    videoStart()
+  } else if (video.webkitRequestFullscreen && !document.webkitFullscreenElement) {
+    video.webkitRequestFullscreen()
+    videoStart()
+  } else if (video.webkitDisplayingFullscreen && !video.webkitDisplayingFullscreen) {
+    video.webkitEnterFullscreen()
+    videoStart()
+  } else if (video.webkitEnterFullScreen && !video.webkitDisplayingFullscreen) {
+    video.webkitEnterFullScreen()
+    videoStart()
+  } else {
+    videoEnd()
   }
 })
 

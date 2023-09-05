@@ -1,15 +1,20 @@
 @import './vars';
 
 .animation {
-  padding-top: 48px;
+  background: $dark-950;
+}
+
+.animation__wrapper {
+  padding: 48px 0;
+  background: $dark-900;
   position: relative;
 
   @media only screen and (min-width: 760px) {
-    padding-top: 90px;
+    padding: 90px 0 50px 0;
   }
 
   @media only screen and (min-width: 1160px) {
-    padding-top: 160px;
+    padding: 160px 0 50px 0;
     border-radius: 0 0 40px 40px;
   }
 }
