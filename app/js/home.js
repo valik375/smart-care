@@ -67,7 +67,7 @@ document.querySelectorAll('.features__item-example-movie').forEach(section => {
 const tabButtons = document.querySelectorAll('.convenient-control__tab-item')
 const tabsWrapper = document.querySelector('.convenient-control__tabs')
 
-const opportunityItems = document.querySelectorAll('.convenient-control__opportunity-content')
+const opportunityItems = document.querySelectorAll('.convenient-control__opportunity')
 const controlImage = document.querySelector('.convenient-control__main-image')
 const opportunityValues = [
   [
@@ -121,7 +121,7 @@ tabButtons.forEach((button, index) => {
       controlImage.children[0].src = '../assets/voice-controller.png'
     }
     opportunityItems.forEach((opportunity, opportunityIndex) => {
-      const title = opportunity.children[0]
+      const title = opportunity.children[0].children[1]
       const text = opportunity.children[1]
       title.innerHTML = opportunityValues[index][opportunityIndex].title
       text.innerHTML = opportunityValues[index][opportunityIndex].text
@@ -297,19 +297,18 @@ const fixedNavigatedSections = document.querySelectorAll('.navigation-section')
 const fixedNavigatedItems = document.querySelectorAll('.fixed-navigation__item')
 const options = {
   root: null,
-  rootMargin: '10px',
-  threshold: 0.5
+  rootMargin: '-50px 0px',
+  threshold: .5
 }
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
-    if (entry.isIntersecting && entry.target.id) {
-      const sectionIndex = parseInt(entry.target.dataset.index)
+    const sectionIndex = parseInt(entry.target.dataset.index)
+    if (entry.isIntersecting) {
       fixedNavigatedItems[sectionIndex].classList.add('active')
     } else {
-      fixedNavigatedItems.forEach(item => {
-        item.classList.remove('active')
-      })
+      fixedNavigatedItems[sectionIndex].classList.remove('active')
     }
+    fixedNavigatedItems[sectionIndex - 1].classList.remove('active')
   })
 }, options)
 
@@ -325,3 +324,4 @@ document.querySelector('.scenario-modal__button').addEventListener('click', () =
 dropdownSetup('.wireless-system')
 dropdownSetup('.save-bills')
 dropdownSetup('.have-questions')
+dropdownSetup('.convenient-control')

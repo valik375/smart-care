@@ -1,14 +1,14 @@
 @import './vars';
 
 .products {
-  padding-top: 48px;
+  padding: 48px 0 24px 0;
 
   @media only screen and (min-width: 760px) {
-    padding-top: 90px;
+    padding: 90px 0 45px 0;
   }
 
   @media only screen and (min-width: 1160px) {
-    padding-top: 160px;
+    padding: 160px 0 90px 0;
   }
 }
 
@@ -75,6 +75,7 @@
 
   @media only screen and (min-width: 1160px) {
     min-width: 1160px;
+    gap: 16px;
   }
 }
 
@@ -89,7 +90,7 @@
 
 .products__item {
   width: 140px;
-  height: 42px;
+  height: 52px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -104,57 +105,104 @@
 
   &:nth-child(1) {
     img {
-      width: 78px;
+      width: 25px;
       height: 16px;
     }
   }
 
   &:nth-child(2) {
     img {
-      width: 25px;
-      height: 16px;
-    }
-  }
-
-  &:nth-child(3) {
-    img {
       width: 88px;
       height: 13px;
     }
   }
 
-  &:nth-child(4) {
+  &:nth-child(3) {
     img {
       width: 116px;
       height: 18px;
     }
   }
 
-  &:nth-child(5) {
+  &:nth-child(4) {
    img {
      width: 54px;
      height: 24px;
    }
   }
 
-  &:nth-child(6) {
+  &:nth-child(5) {
     img {
       width: 61px;
       height: 37px;
     }
   }
 
-  &:nth-child(7) {
+  &:nth-child(6) {
     img {
       width: 75px;
       height: 14px;
     }
   }
 
-  &:nth-child(8) {
+  &:nth-child(7) {
     img {
       width: 21px;
       height: 22px;
+    }
+  }
+
+  @media only screen and (min-width: 1160px) {
+    height: 60px;
+    width: 176px;
+
+    &:nth-child(1) {
+      img {
+        width: 31px;
+        height: 20px;
+      }
+    }
+
+    &:nth-child(2) {
+      img {
+        width: 108px;
+        height: 16px;
+      }
+    }
+
+    &:nth-child(3) {
+      img {
+        width: 142px;
+        height: 22px;
+      }
+    }
+
+    &:nth-child(4) {
+      img {
+        width: 68px;
+        height: 30px;
+      }
+    }
+
+    &:nth-child(5) {
+      img {
+        width: 76px;
+        height: 46px;
+      }
+    }
+
+    &:nth-child(6) {
+      img {
+        width: 86px;
+        height: 16px;
+      }
+    }
+
+    &:nth-child(7) {
+      img {
+        width: 25px;
+        height: 26px;
+      }
     }
   }
 }

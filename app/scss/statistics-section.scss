@@ -57,15 +57,15 @@
   gap: 8px;
   animation: scroll-left 30s linear infinite;
 
-  @media only screen and (min-width: 760px) {
+  @media only screen and (min-width: 1160px) {
 
     &.first {
       min-width: auto;
       width: 100%;
-      padding: 0 30px;
+      padding: 0;
       animation: none;
       justify-content: space-between;
-      max-width: 860px;
+      max-width: 1160px;
       margin: 0 auto;
       z-index: 9;
     }
@@ -106,7 +106,11 @@
 
   @media only screen and (min-width: 760px) {
     margin-right: 0;
-    min-width: calc(100% / 3);
+    min-width: calc(100% / 4) !important;
+  }
+
+  @media only screen and (min-width: 1160px) {
+    min-width: fit-content!important;
   }
 }
 

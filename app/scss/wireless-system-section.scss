@@ -15,3 +15,9 @@
 .wireless-system__info {
   margin-bottom: 32px;
 }
+
+.wireless-system__left .column-image {
+  @media only screen and (min-width: 1160px) {
+    height: 678px;
+  }
+}

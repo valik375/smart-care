@@ -308,24 +308,22 @@ comfortFeatureDropdowns.map((item, index) => {
                         `
                       }).join('') }
                     </div>
-    
                   </div>
                 `
               }).join('') }
-              
-            </div>
-            <div class="functions-page__scenario-info"> 
-              <p class="text">Немає потрібного вам сценарію? Зробіть власний за допомогою мобільного додатку!</p>
-              <div class="tooltip top">
-                <img src="../assets/gray-information.svg" alt="Inform Icon">
-                <div class="tooltip__wrapper">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="5" viewBox="0 0 12 5" fill="none">
-                    <path d="M12 5L7.45308 1.08768C6.7209 0.457695 5.6431 0.440996 4.89176 1.048L-2.18557e-07 5L12 5Z" fill="#2E3038"/>
-                  </svg>
-                  Усі наші системи керуються з додатку за замовчуванням. 
-                  Це не потребує додаткових затрат на встановлення.
+              <div class="functions-page__scenario-info">
+                <p class="text">Немає потрібного вам сценарію? Зробіть власний за допомогою мобільного додатку!</p>
+                <div class="tooltip top">
+                  <img src="../assets/gray-information.svg" alt="Inform Icon">
+                  <div class="tooltip__wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="5" viewBox="0 0 12 5" fill="none">
+                      <path d="M12 5L7.45308 1.08768C6.7209 0.457695 5.6431 0.440996 4.89176 1.048L-2.18557e-07 5L12 5Z" fill="#2E3038"/>
+                    </svg>
+                    Усі наші системи керуються з додатку за замовчуванням.
+                    Це не потребує додаткових затрат на встановлення.
+                  </div>
                 </div>
-               </div>
+              </div>
             </div>
           </div>
         </div>

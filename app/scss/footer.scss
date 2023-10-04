@@ -92,8 +92,13 @@
   font-size: 14px;
   font-weight: 700;
   line-height: 160%;
-  color: $white;
+  color: $dark-500;
   margin-bottom: 16px;
+  transition: all .3s ease;
+
+  &:hover {
+    color: $white;
+  }
 
   &:last-child {
     margin-bottom: 0;
@@ -118,11 +123,16 @@
   font-size: 14px;
   font-weight: 700;
   line-height: 160%;
-  color: $white;
+  color: $dark-500;
   margin-bottom: 16px;
+  transition: all .3s ease;
 
   img {
     margin-right: 6px;
+  }
+
+  &:hover {
+    color: $white;
   }
 }
 
@@ -155,6 +165,11 @@
     line-height: 160%;
     color: $dark-500;
     margin-bottom: 12px;
+    transition: all .3s ease;
+
+    &:hover {
+      color: $white;
+    }
   }
 
   @media only screen and (min-width: 1160px) {

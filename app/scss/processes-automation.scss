@@ -41,7 +41,11 @@
 }
 
 .processes-automation__button {
-  width: calc(100% - 125px);
+  width: calc(100% - 120px);
+
+  img {
+    margin-left: 0 !important;
+  }
 }
 
 .processes-automation__label {

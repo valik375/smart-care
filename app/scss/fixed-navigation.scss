@@ -10,7 +10,7 @@
     border: 1px solid $dark-600;
     background: $dark-800;
     position: fixed;
-    left: calc(50% - 660px);
+    left: 28px;
     top: 50%;
     transform: translateY(-50%);
     display: flex;
@@ -51,6 +51,9 @@
     &.active {
       .fixed-navigation__dot {
         background: $white;
+      }
+      .fixed-navigation__section-name {
+        color: $white;
       }
     }
 
