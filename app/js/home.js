@@ -297,18 +297,18 @@ const fixedNavigatedSections = document.querySelectorAll('.navigation-section')
 const fixedNavigatedItems = document.querySelectorAll('.fixed-navigation__item')
 const options = {
   root: null,
-  rootMargin: '-50px 0px',
+  rootMargin: '0px',
   threshold: .5
 }
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     const sectionIndex = parseInt(entry.target.dataset.index)
     if (entry.isIntersecting) {
+      fixedNavigatedItems[sectionIndex - 1] && fixedNavigatedItems[sectionIndex - 1].classList.remove('active')
       fixedNavigatedItems[sectionIndex].classList.add('active')
     } else {
       fixedNavigatedItems[sectionIndex].classList.remove('active')
     }
-    fixedNavigatedItems[sectionIndex - 1].classList.remove('active')
   })
 }, options)
 
