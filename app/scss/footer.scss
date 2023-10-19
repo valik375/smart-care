@@ -92,12 +92,12 @@
   font-size: 14px;
   font-weight: 700;
   line-height: 160%;
-  color: $dark-500;
+  color: $white;
   margin-bottom: 16px;
   transition: all .3s ease;
 
   &:hover {
-    color: $white;
+    color: $dark-500;
   }
 
   &:last-child {
@@ -123,7 +123,7 @@
   font-size: 14px;
   font-weight: 700;
   line-height: 160%;
-  color: $dark-500;
+  color: $white;
   margin-bottom: 16px;
   transition: all .3s ease;
 
@@ -132,7 +132,7 @@
   }
 
   &:hover {
-    color: $white;
+    color: $dark-500;
   }
 }
 

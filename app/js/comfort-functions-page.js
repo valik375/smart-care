@@ -312,7 +312,6 @@ comfortFeatureDropdowns.map((item, index) => {
                 `
               }).join('') }
               <div class="functions-page__scenario-info">
-                <p class="text">Немає потрібного вам сценарію? Зробіть власний за допомогою мобільного додатку!</p>
                 <div class="tooltip top">
                   <img src="../assets/gray-information.svg" alt="Inform Icon">
                   <div class="tooltip__wrapper">
@@ -323,6 +322,7 @@ comfortFeatureDropdowns.map((item, index) => {
                     Це не потребує додаткових затрат на встановлення.
                   </div>
                 </div>
+                <p class="text">Немає потрібного вам сценарію? Зробіть власний за допомогою мобільного додатку!</p>
               </div>
             </div>
           </div>
