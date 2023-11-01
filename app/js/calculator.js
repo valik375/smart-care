@@ -109,17 +109,17 @@ let calculatorSections = [
         roomType: ['kitchen', 'bathroom'],
         selected: false
       },
-      {
-        text: 'інше',
-        label: 'other',
-        icon: '../assets/white-other.svg',
-        price: {
-          flat: 0,
-          house: 0,
-          office: 0
-        },
-        selected: false
-      }
+      // {
+      //   text: 'інше',
+      //   label: 'other',
+      //   icon: '../assets/white-other.svg',
+      //   price: {
+      //     flat: 0,
+      //     house: 0,
+      //     office: 0
+      //   },
+      //   selected: false
+      // }
     ]
   },
   {
@@ -209,29 +209,29 @@ let calculatorSections = [
         },
         selected: false
       },
-      {
-        text: 'Тепла підлога',
-        label: 'underfloorHeating',
-        icon: '../assets/white-floor.svg',
-        price: {
-          flat: 100,
-          house: 100,
-          office: 100
-        },
-        roomType: ['kitchen', 'bathroom', 'livingRoom', 'bedroom'],
-        selected: false
-      },
-      {
-        text: 'інше',
-        label: 'other',
-        icon: '../assets/white-other.svg',
-        price: {
-          flat: 0,
-          house: 0,
-          office: 0
-        },
-        selected: false
-      }
+      // {
+      //   text: 'Тепла підлога',
+      //   label: 'underfloorHeating',
+      //   icon: '../assets/white-floor.svg',
+      //   price: {
+      //     flat: 100,
+      //     house: 100,
+      //     office: 100
+      //   },
+      //   roomType: ['kitchen', 'bathroom', 'livingRoom', 'bedroom'],
+      //   selected: false
+      // },
+      // {
+      //   text: 'інше',
+      //   label: 'other',
+      //   icon: '../assets/white-other.svg',
+      //   price: {
+      //     flat: 0,
+      //     house: 0,
+      //     office: 0
+      //   },
+      //   selected: false
+      // }
     ]
   },
   {
