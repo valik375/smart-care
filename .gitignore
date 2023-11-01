@@ -3,6 +3,7 @@
 .pnp.js
 
 /build
+/dist
 
 .DS_Store
 .idea

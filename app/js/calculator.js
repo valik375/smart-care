@@ -35,9 +35,9 @@ let calculatorSections = [
         label: 'protectionAgainstIntrusion',
         icon: '../assets/white-balaclava.svg',
         price: {
-          flat: 400,
-          house: 400,
-          office: 400
+          flat: 300,
+          house: 300,
+          office: 300
         },
         selected: false
       },
@@ -46,9 +46,9 @@ let calculatorSections = [
         label: 'videoSurveillanceSystem',
         icon: '../assets/white-camera.svg',
         price: {
-          flat: 500,
-          house: 500,
-          office: 500
+          flat: 400,
+          house: 400,
+          office: 400
         },
         selected: false
       },
@@ -80,9 +80,9 @@ let calculatorSections = [
         label: 'smartLocks',
         icon: '../assets/white-lock.svg',
         price: {
-          flat: 800,
-          house: 800,
-          office: 800
+          flat: 600,
+          house: 600,
+          office: 600
         },
         selected: false
       },
@@ -91,9 +91,9 @@ let calculatorSections = [
         label: 'fireProtectionSystem',
         icon: '../assets/white-fire.svg',
         price: {
-          flat: 300,
-          house: 300,
-          office: 300
+          flat: 250,
+          house: 250,
+          office: 250
         },
         selected: false
       },
@@ -102,11 +102,22 @@ let calculatorSections = [
         label: 'antiFloodSystem',
         icon: '../assets/white-drop.svg',
         price: {
-          flat: 175,
-          house: 175,
+          flat: 150,
+          house: 150,
           office: 350
         },
         roomType: ['kitchen', 'bathroom'],
+        selected: false
+      },
+      {
+        text: 'інше',
+        label: 'other',
+        icon: '../assets/white-other.svg',
+        price: {
+          flat: 0,
+          house: 0,
+          office: 0
+        },
         selected: false
       }
     ]
@@ -122,8 +133,8 @@ let calculatorSections = [
         label: 'controlOfLighting',
         icon: '../assets/white-light.svg',
         price: {
-          flat: 150,
-          house: 150,
+          flat: 175,
+          house: 175,
           office: 75
         },
         roomType: ['kitchen', 'bedroom', 'bathroom'],
@@ -145,11 +156,11 @@ let calculatorSections = [
         label: 'automaticDoorsAndRollerShutters',
         icon: '../assets/white-blinds.svg',
         price: {
-          flat: 500,
-          house: 500,
-          office: 500
+          flat: 400,
+          house: 400,
+          office: 400
         },
-        roomType: ['bathroom'],
+        roomType: ['bedroom'],
         selected: false
       },
       {
@@ -195,6 +206,29 @@ let calculatorSections = [
           flat: 50,
           house: 50,
           office: 50
+        },
+        selected: false
+      },
+      {
+        text: 'Тепла підлога',
+        label: 'underfloorHeating',
+        icon: '../assets/white-floor.svg',
+        price: {
+          flat: 100,
+          house: 100,
+          office: 100
+        },
+        roomType: ['kitchen', 'bathroom', 'livingRoom', 'bedroom'],
+        selected: false
+      },
+      {
+        text: 'інше',
+        label: 'other',
+        icon: '../assets/white-other.svg',
+        price: {
+          flat: 0,
+          house: 0,
+          office: 0
         },
         selected: false
       }
@@ -414,6 +448,7 @@ const calculate = () => {
         if (variant.roomType?.length) {
           const rooms = selectedRooms.filter(room => variant.roomType.includes(room.label))
           let quantity = 0
+          let isKitchen = !!rooms.find(room => room.label === 'kitchen')
           rooms.forEach(room => {
             quantity += room.value
           })
@@ -421,6 +456,9 @@ const calculate = () => {
           let price = quantity * variant.price[selectedSpaceType]
           if (flatSquare >= 80 && variant.label === 'controlOfLighting') {
             price += 300
+          }
+          if (variant.label === 'underfloorHeating' && isKitchen) {
+            price += 100
           }
           setFunctions(index, price, quantity, variant.text)
           return {
@@ -483,20 +521,28 @@ const formTemplate = () => {
             </div>
             <div class="calculator-modal_final-dropdown-item-value">$220</div>
           </div>
-          <div class="calculator-modal_final-dropdown-item">
-            <div class="calculator-modal_final-dropdown-item-wrapper">
-              <div class="calculator-modal_final-dropdown-item-title">Безпека та захист</div>
-              <div class="calculator-modal_final-dropdown-item-text text">${securityFunctionsText.map(text => text).join(' ')}</div>
-            </div>
-            <div class="calculator-modal_final-dropdown-item-value">$${securityFunctions}</div>
-          </div>
-          <div class="calculator-modal_final-dropdown-item">
-            <div class="calculator-modal_final-dropdown-item-wrapper">
-              <div class="calculator-modal_final-dropdown-item-title">Комфорт та продуктивність</div>
-              <div class="calculator-modal_final-dropdown-item-text text">${comfortFunctionsText.map(text => text).join(' ,')}</div>
-            </div>
-            <div class="calculator-modal_final-dropdown-item-value">$${comfortFunctions}</div>
-          </div>
+          ${
+            securityFunctions === 0 ? '' : `
+               <div class="calculator-modal_final-dropdown-item">
+                <div class="calculator-modal_final-dropdown-item-wrapper">
+                  <div class="calculator-modal_final-dropdown-item-title">Безпека та захист</div>
+                  <div class="calculator-modal_final-dropdown-item-text text">${securityFunctionsText.map(text => text).join(' ')}</div>
+                </div>
+                <div class="calculator-modal_final-dropdown-item-value">$${securityFunctions}</div>
+              </div>
+            `
+          }
+          ${
+            comfortFunctions === 0 ? '' : `
+              <div class="calculator-modal_final-dropdown-item">
+                <div class="calculator-modal_final-dropdown-item-wrapper">
+                  <div class="calculator-modal_final-dropdown-item-title">Комфорт та продуктивність</div>
+                  <div class="calculator-modal_final-dropdown-item-text text">${comfortFunctionsText.map(text => text).join(' ,')}</div>
+                </div>
+                <div class="calculator-modal_final-dropdown-item-value">$${comfortFunctions}</div>
+              </div>
+            ` 
+          }
           <div class="calculator-modal_final-dropdown-item">
             <div class="calculator-modal_final-dropdown-item-wrapper">
               <div class="calculator-modal_final-dropdown-item-title">Проектування</div>
