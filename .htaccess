@@ -1,4 +1,6 @@
 RewriteEngine On
 RewriteCond %{HTTP_HOST} ^www.thecaresmart.com [NC]
 RewriteRule ^(.*) https://thecaresmart.com/$1 [R=301,L]
-RewriteRule ^index.html$ / [R=301,L]
+
+# Добавляем редирект с /index.html на /
+RewriteRule ^index\.html$ / [R=301,L]

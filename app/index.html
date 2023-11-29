@@ -25,6 +25,13 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5PPVS337" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!------------------ End Google Tag Manager (noscript) ------------------>
   
+  
+  <!------------------ End Google Tag Manager ID GTM-5LBD4RC4 ------------------>
+  <!--<noscript>-->
+  <!--  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5LBD4RC4" height="0" width="0" style="display:none;visibility:hidden"></iframe>-->
+  <!--</noscript>-->
+  <!------------------ End Google Tag Manager ID GTM-5LBD4RC4 ------------------>
+  
   <!------------------ Meta Pixel Code ------------------>
   <script>
     !function(f,b,e,v,n,t,s)
@@ -54,6 +61,7 @@
   </script>
   <!------------------ End Google tag (gtag.js) ------------------>
   
+  <!------------------ Loader Styles ------------------>
   <style>
       .loader {
           width: 100%;
@@ -104,15 +112,17 @@
           }
       }
   </style>
+  <!------------------ Loader Styles ------------------>
+  
   <link rel="stylesheet" href="../css/common.min.css">
   <link rel="stylesheet" href="../css/home-page.min.css">
   <link rel="canonical" href="https://www.thecaresmart.com">
 
   <title>Розумний будинок під ключ - Монтаж системи розумного будинку в Києві, Україні | Smart Care</title>
+  <meta name="description" content="Бездротовий розумний будинок твоєї мрії">
   <meta name="description" content="⏩️ Замовити систему Розумний будинок під ключ ⭐ Установка Розумного будинку в квартирі або котеджі з
   гарантією ✅ Індивідуальне проєктування і монтаж системи ✅ Підбір обладнання та обслуговування | Smart Care">
 
-  <meta name="description" content="Бездротовий розумний будинок твоєї мрії">
   <meta property="og:title" content="Smart Care | Головна">
   <meta property="og:description" content="Бездротовий розумний будинок твоєї мрії">
   <meta property="og:type" content="website">
@@ -124,12 +134,7 @@
 <body>
   <div class="loader"><div class="spinner"></div></div>
   <main class="main">
-    <!-- Google Tag Manager (noscript) -->
-    <noscript>
-      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5LBD4RC4" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    <header class="header">
+    <header class="header bf-label-hidden">
       <div class="header__mobile-info">
         <div class="header__container">
           <div class="header__mobile-info-location">
@@ -160,6 +165,17 @@
           </a>
         </div>
       </div>
+    
+      <div class="header__black-friday">
+        <div class="header__black-friday-wrapper">
+          <div class="header__black-friday-label">-20%</div>
+          <div class="header__black-friday-content">
+            <p>20 – 26 листопада. Знижки на чорну пʼятницю</p>
+            <img src="../assets/white-arrow-right.svg" alt="Arrow icon">
+          </div>
+        </div>
+      </div>
+    
       <div class="header__container">
         <div class="header__wrapper mobile">
           <div class="header__left">
@@ -219,7 +235,7 @@
                   </div>
                 </div>
               </div>
-              <div class="header__showroom button gray">
+              <div class="header__showroom showroom-trigger button gray">
                 Відвідати Шоурум
               </div>
             </div>
@@ -287,7 +303,7 @@
                 </div>
               </div>
             </div>
-            <div class="header__showroom button gray">
+            <div class="header__showroom showroom-trigger button gray">
               Відвідати Шоурум
             </div>
             <button class="header__nav-button button blue consultation animated" type="button">
@@ -299,6 +315,90 @@
         </div>
       </div>
     </header>
+    
+    <div class="black-friday-modal__backdrop modal__backdrop">
+    
+      <div class="black-friday-modal modal">
+    
+    
+    
+        <div class="black-friday-modal__wrapper">
+    
+          <div class="modal__close">
+    
+            <img src="../assets/white-cross.svg" alt="Cross">
+    
+          </div>
+    
+    
+    
+          <img class="black-friday-modal__image" src="../assets/black-friday-image.png" alt="black friday image">
+    
+          <div class="black-friday-modal__title">
+    
+            Знижки <span>-20%</span> на встановлення систем розумного будинку.
+    
+            <br> 20 – 26 листопада
+    
+          </div>
+    
+          <p class="black-friday-modal__text text">Залиште свої контакти і ми звʼяжемося з вами у найближчий робочий час для
+    
+            зʼясування деталей</p>
+    
+          <form class="form-modal__form" action="https://formspree.io/f/mrgwqeyd" method="POST">
+    
+            <div class="input-group">
+    
+              <label for="name" class="label">Імʼя*</label>
+    
+              <input class="input" id="name" name="Імʼя" type="text" placeholder="Введіть ваше імʼя" required>
+    
+            </div>
+    
+            <div class="input-group">
+    
+              <label for="phone" class="label">Телефон*</label>
+    
+              <input
+    
+                class="input"
+    
+                id="phone"
+    
+                name="Телефон"
+    
+                value="+380"
+    
+                placeholder="+380XXXXXXXXX"
+    
+                type="tel"
+    
+                pattern="^\+380[0-9]{9}$"
+    
+                title="Введіть данні в форматі +380XXXXXXXXX"
+    
+                required
+    
+              >
+    
+            </div>
+    
+            <button class="black-friday-modal__button button blue" type="submit">
+    
+              <span>Передзвоніть мені</span>
+    
+            </button>
+    
+          </form>
+    
+        </div>
+    
+        
+    
+      </div>
+    
+    </div>
     <div class="fixed-navigation">
       <a class="fixed-navigation__item active" href="#banner">
         <span class="fixed-navigation__dot"></span>
