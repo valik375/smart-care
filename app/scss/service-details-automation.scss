@@ -1,0 +1,134 @@
+@import './vars';
+
+.service-details-template {
+
+  .automations {
+    padding-top: 56px;
+  }
+
+  .automations__title-wrapper {
+    width: 100%;
+    max-width: 510px;
+    margin: 0 auto 32px;
+    text-align: center;
+
+    @media only screen and (min-width: 1160px) {
+      margin-bottom: 64px;
+    }
+  }
+
+  .automations__title {
+    margin-bottom: 12px;
+  }
+
+  .automations__list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    @media only screen and (min-width: 1160px) {
+      gap: 16px;
+    }
+  }
+
+  .automations__item {
+    padding: 12px 16px 16px 16px;
+  }
+
+  .automations__item-title {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 16px;
+
+    svg {
+      min-width: 24px;
+      height: 24px;
+    }
+
+    span {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 155%;
+      color: $gray;
+    }
+
+    @media only screen and (min-width: 1160px) {
+      margin-bottom: 24px;
+    }
+  }
+
+  .automations__options-list {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+
+    @media only screen and (min-width: 1160px) {
+      gap: 8px;
+    }
+  }
+
+  .automations__option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &:last-child .automations__option-arrow {
+      display: none;
+    }
+  }
+
+  .automations__option-card {
+    width: fit-content;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 4px 16px;
+    border-radius: 12px;
+    background: $dark-600;
+
+    img {
+      width: 22px;
+      height: 22px;
+    }
+
+    span {
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 140%;
+      color: $white;
+    }
+  }
+
+  .automations__option-arrow {
+    width: 24px;
+    height: 24px;
+    margin-left: 4px;
+  }
+
+  .automations__message {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: 24px;
+
+    span {
+      font-size: 13px;
+      line-height: 155%;
+    }
+
+    svg {
+      min-width: 20px;
+      height: 20px;
+    }
+
+    @media only screen and (min-width: 1160px) {
+      width: fit-content;
+      margin: 24px auto 0;
+    }
+  }
+}

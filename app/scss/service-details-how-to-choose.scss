@@ -1,0 +1,73 @@
+@import './vars';
+
+.service-details-template {
+
+  .choose {
+    padding-top: 50px;
+
+    @media only screen and (min-width: 760px) {
+      padding-top: 100px;
+    }
+
+    @media only screen and (min-width: 1160px) {
+      padding-top: 160px;
+    }
+  }
+
+  .choose__container {
+
+    @media only screen and (min-width: 1160px) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 100px;
+    }
+  }
+
+  .choose__left {
+    margin-bottom: 40px;
+
+    @media only screen and (min-width: 1160px) {
+      width: calc(100% - 500px);
+      margin-bottom: 0;
+    }
+  }
+
+  .choose__text {
+    font-size: 15px;
+    margin-bottom: 24px;
+  }
+
+  .choose__button {
+    @media only screen and (min-width: 1160px) {
+      width: fit-content;
+    }
+  }
+
+  .choose__right {
+    width: 100%;
+    height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('../assets/two-column-section-bg.png');
+    background-size: cover;
+    overflow: hidden;
+    border-radius: 20px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    @media only screen and (min-width: 760px) {
+      height: 320px;
+    }
+
+    @media only screen and (min-width: 1160px) {
+      width: 500px;
+      height: 440px;
+    }
+  }
+}
