@@ -1,0 +1,63 @@
+@import "vars";
+
+.about-us-history {
+  padding-top: 50px;
+
+  @media only screen and (min-width: 760px) {
+    padding-top: 100px;
+  }
+
+  @media only screen and (min-width: 1160px) {
+    padding-top: 150px;
+  }
+}
+
+.about-us-history__container {
+
+  @media only screen and (min-width: 1160px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.about-us-history__info {
+  margin-bottom: 24px;
+
+  @media only screen and (min-width: 1160px) {
+    width: calc(100% - 600px);
+  }
+}
+
+.about-us-history__text {
+  margin-bottom: 24px;
+}
+
+.about-us-history__button {
+
+  @media only screen and (min-width: 1160px) {
+    width: auto;
+  }
+}
+
+.about-us-history__image {
+  width: 100%;
+  height: 210px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('../assets/two-column-section-bg.png');
+  background-size: cover;
+  overflow: hidden;
+  border-radius: 20px;
+
+  img {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  @media only screen and (min-width: 1160px) {
+    width: 480px;
+    height: 320px;
+  }
+}

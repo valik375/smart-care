@@ -73,8 +73,8 @@
     text-overflow: ellipsis;
   }
 
-  .equipment__swiper-button-prev,
-  .equipment__swiper-button-next {
+  .equipment__swiper-prev,
+  .equipment__swiper-next {
     display: none;
 
     @media only screen and (min-width: 1160px) {
@@ -102,20 +102,6 @@
       &:hover {
         background: $dark-500;
       }
-    }
-  }
-  .equipment__swiper-button-prev {
-    @media only screen and (min-width: 1160px) {
-      top: 50%;
-      left: 0;
-      transform: translate(-50%, -50%);
-    }
-  }
-  .equipment__swiper-button-next {
-    @media only screen and (min-width: 1160px) {
-      top: 50%;
-      right: 0;
-      transform: translate(50%, -50%);
     }
   }
 }

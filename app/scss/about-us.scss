@@ -1,0 +1,17 @@
+@import "vars";
+@import "about-us-banner";
+@import "about-us-portfolio";
+@import "about-us-team";
+@import "about-us-history";
+@import "products-section";
+@import "service-section";
+@import "about-us-location";
+
+.about-us-advantages__button {
+  margin-top: 24px;
+
+  @media only screen and (min-width: 1160px) {
+    width: fit-content;
+    margin: 24px auto 0;
+  }
+}
