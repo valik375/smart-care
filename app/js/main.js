@@ -123,25 +123,3 @@ openModalHandler('.showroom-trigger', '.showroom-modal__backdrop')
 openModalHandler('.button.consultation', '.consultation-modal__backdrop')
 openModalHandler('.button.scenario', '.scenario-modal__backdrop')
 openModalHandler('.header__black-friday-wrapper', '.black-friday-modal__backdrop')
-
-// ======== BF Event =========
-
-const blackFridayBanner = document.querySelector('.header')
-window.addEventListener('scroll', () => {
-  const scrollY = window.scrollY
-
-  if (scrollY === 0) {
-    blackFridayBanner.classList.add('bf-label-hidden')
-  } else {
-    blackFridayBanner.classList.remove('bf-label-hidden')
-  }
-})
-
-const bfBannerTrigger = JSON.parse(localStorage.getItem('bfBanner'))
-if (bfBannerTrigger !== true) {
-  const bfBanner = document.querySelector('.black-friday-modal__backdrop')
-  setTimeout(() => {
-    bfBanner.classList.add('visible')
-    localStorage.setItem('bfBanner', 'true')
-  }, 20000)
-}
