@@ -5,6 +5,9 @@ const headerWrapper = document.querySelector('.header__wrapper')
 burgerMenuButton.addEventListener('click', () => {
   headerWrapper.classList.toggle('menu-open')
 })
+document.querySelector('.header__menu-link').addEventListener('click', () => {
+  document.querySelector('.header__accordion').classList.toggle('active')
+})
 
 // ======== Dropdown =========
 
