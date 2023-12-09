@@ -1,0 +1,23 @@
+@import "vars";
+
+.bread-crumbs {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.bread-crumbs__item {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 140%; 
+  color: $white;
+  
+  &:last-child svg {
+    display: none;
+  }
+}
