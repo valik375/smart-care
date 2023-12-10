@@ -227,6 +227,159 @@
     color: $white;
     border-radius: 8px;
     transition: all .3s ease;
+    cursor: pointer;
+
+    &.simple-dropdown {
+      padding: 0;
+    }
+
+    &.menu-items {
+
+      .services-link__item {
+        width: 100%;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        border-radius: 8px;
+        padding: 8px 12px 8px 8px;
+        overflow: hidden;
+        transition: all .3s ease;
+
+        img {
+          width: 32px;
+          height: 32px;
+          border-radius: 6px;
+          background: $dark-600;
+          padding: 5px;
+        }
+
+        span {
+          font-size: 14px;
+          font-weight: 700;
+          line-height: 160%;
+          color: $white;
+        }
+
+        &:hover {
+          background: $dark-700;
+        }
+      }
+    }
+
+    &.services {
+
+      .simple-dropdown-body {
+        width: 700px;
+        padding: 0;
+      }
+
+      .services-link__wrapper {
+        padding: 28px 24px 32px 24px;
+        border-bottom: 1px solid $dark-600;
+      }
+
+      .services-link__title {
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 150%;
+        letter-spacing: 0.12px;
+        text-transform: uppercase;
+        color: #616676;
+        padding-left: 8px;
+        margin-bottom: 12px;
+      }
+
+      .services-link__list {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .services-link__item {
+        width: calc(50% - 6px);
+      }
+
+      .services-link__more {
+        display: flex;
+        align-items: center;
+        padding-left: 8px;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 150%;
+        color: #84899A;
+        margin-top: 18px;
+      }
+
+      .services-link__calculate {
+        padding: 24px 32px;
+      }
+
+      .services-link__calculate-button {
+        width: 100%;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 12px;
+        background: $dark-600;
+        padding: 0 10px;
+        transition: all .3s ease;
+
+        &:hover {
+          background: $dark-550;
+        }
+      }
+
+      .services-link__calculate-left {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        svg {
+          width: 40px;
+          height: 40px;
+        }
+
+        span {
+          font-size: 12px;
+          font-weight: 700;
+          line-height: 150%;
+          letter-spacing: 0.12px;
+          text-transform: uppercase;
+          color: $white;
+        }
+      }
+
+      .services-link__calculate-right {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+
+        svg {
+          width: 20px;
+          height: 20px;
+        }
+
+        span {
+          font-size: 12px;
+          font-weight: 700;
+          line-height: 150%;
+          letter-spacing: 0.12px;
+          text-transform: uppercase;
+          color: $blue;
+        }
+      }
+    }
+
+    &.company {
+
+      .simple-dropdown-body {
+        width: 200px;
+      }
+    }
 
     &.phone {
       margin-right: 10px;
